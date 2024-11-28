@@ -1,5 +1,0 @@
-// script.js
-
-function learnMore() {
-  alert('Thank you for showing interest in our Lift Containment Systems!');
-}
