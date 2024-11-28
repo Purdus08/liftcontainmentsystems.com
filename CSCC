@@ -1,7 +1,0 @@
-liftcontainmentsystems/
-│
-├── index.html        (The main HTML file)
-├── style.css         (CSS for styling)
-├── script.js         (JavaScript functionality)
-└── assets/           (Images or other media files)
-    └── logo.png
