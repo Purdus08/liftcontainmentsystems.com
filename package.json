@@ -1,0 +1,19 @@
+{
+  "name": "product-website",
+  "version": "1.0.0",
+  "description": "A simple product-selling website with Netlify and email functionality.",
+  "main": "server.js",
+  "scripts": {
+    "start": "netlify dev"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "nodemailer": "^6.9.3"
+  },
+  "devDependencies": {
+    "netlify-cli": "^15.4.0"
+  },
+  "keywords": ["product", "website", "netlify", "email", "serverless"],
+  "author": "Your Name",
+  "license": "MIT"
+}
