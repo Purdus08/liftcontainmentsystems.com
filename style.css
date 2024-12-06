@@ -29,19 +29,19 @@ header .logo {
     font-weight: bold;*/
 }
 
-header .bliss {
+/*header .bliss {
     display:right;
-}
+}*/
 
-header nav a {
+header .bliss {
     color: white;
     text-decoration: none;
     margin: 0 15px;
 }
 
-header nav a:hover {
+/*header nav a:hover {
     text-decoration: underline;
-}
+}*/
 
 #hero {
     text-align: center;
