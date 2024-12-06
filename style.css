@@ -69,7 +69,7 @@ section {
 .product {
   border: 1px solid #ddd;
   padding: 20px;
-  display: inline-block;
+  display: center;
 }
 
 button {
