@@ -14,7 +14,7 @@ header {
     background: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 1rem 0;
-    position: sticky;
+    position: static;
     top: 0;
     display: flex;
     justify-content: space-between;
