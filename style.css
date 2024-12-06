@@ -66,6 +66,25 @@ section {
     list-style-position: inside;
 }
 
+.product {
+  border: 1px solid #ddd;
+  padding: 20px;
+  display: inline-block;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+
 #contact form {
     display: flex;
     flex-direction: column;
