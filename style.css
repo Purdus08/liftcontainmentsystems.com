@@ -23,8 +23,8 @@ header {
 
 header .logo {
     margin-left: 20px;
-    height: 200px;
-    width: 250px;
+    height: 100px;
+    width: 200px;
     /*font-size: 1.5rem;
     font-weight: bold;*/
 }
@@ -35,6 +35,8 @@ header .logo {
 
 header .bliss {
     color: white;
+    width: 100px;
+    height: 200px;
     text-decoration: none;
     margin: 0 15px;
 }
