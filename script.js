@@ -4,7 +4,7 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
 });
 
 
-document.getElementById('buyBtn').addEventListener('click', async () => {
+/*document.getElementById('buyBtn').addEventListener('click', async () => {
   try {
     const response = await fetch('/.netlify/functions/sendEmail', { method: 'POST' });
     const result = await response.json();
@@ -12,4 +12,4 @@ document.getElementById('buyBtn').addEventListener('click', async () => {
   } catch (error) {
     alert('Failed to send email. Please try again.');
   }
-});
+});*/
