@@ -34,6 +34,16 @@ header .logo {
     display:right;
 }*/
 
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index:-100;
+}
+
+/*
 header .bliss {
     color: white;
     width: 150px;
@@ -41,6 +51,7 @@ header .bliss {
     text-decoration: none;
     margin: 0 15px;
 }
+*/
 
 /*header nav a:hover {
     text-decoration: underline;
