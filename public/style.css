@@ -30,11 +30,7 @@ header .logo {
     font-weight: bold;*/
 }
 
-/*header .bliss {
-    display:right;
-}*/
-
-video {
+header .bliss {
   position: absolute;
   top: 0;
   left: 0;
