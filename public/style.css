@@ -37,7 +37,7 @@ header .bliss {
 }
 
 /*header .bliss {
-  position: absolute;
+  position: absolute; this is to make it in background
   top: 0;
   left: 0;
   min-width: 100%;
