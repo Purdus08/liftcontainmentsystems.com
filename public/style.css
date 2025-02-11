@@ -315,6 +315,7 @@ nav ul li a{
             border: 0;
             border-radius: 24px;
             flex-shrink: 0;
+            curser: pointer;
         }
     }
 
