@@ -306,6 +306,14 @@ nav ul li a{
         }
 
         /* Add styles for textarea */
+
+                /* Ensure consistent font style for email and message boxes */
+        input[type="email"], textarea {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px; /* Optional: Make sure the font size is consistent */
+        }
+
+        
         textarea {
             width: 100%;
             max-width: 400px;
