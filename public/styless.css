@@ -59,3 +59,15 @@ h1 {
 html{
     scroll-behavior: smooth;
 }
+
+footer {
+    background-color: #1E1E1E;
+    padding: 20px;
+    text-align: center;
+    color: #888;
+  }
+  
+  footer p {
+    font-size: 1em;
+  }
+  
