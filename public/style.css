@@ -152,6 +152,7 @@ nav ul li a{
 
     h1{
         color: var(--accent);
+        text-align: right;
     }
 
     p{
