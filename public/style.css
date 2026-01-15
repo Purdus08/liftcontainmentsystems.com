@@ -20,7 +20,7 @@ body{
     font-family:"Montserrat", sans-serif;
 }
 
-h1{
+h2{
     font-size: 48px;
     color: var(--white);
     font-weight: 900;
@@ -682,4 +682,5 @@ footer{
 
 html{
     scroll-behavior: smooth;
+
 }
