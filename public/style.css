@@ -280,7 +280,7 @@ nav ul li a{
 
 
     h3,h4{
-        color: var(--white);
+        color: var(--black);
     }
 
     .container{
@@ -684,5 +684,6 @@ html{
     scroll-behavior: smooth;
 
 }
+
 
 
