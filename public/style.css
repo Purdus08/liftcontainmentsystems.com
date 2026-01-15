@@ -197,7 +197,7 @@ nav ul li a{
         width:90%;
         top: 0;
     }
-    h1{
+    h2{
         font-size: 36px;
     }
     .btn.primary, .btn.ghost {
@@ -684,4 +684,5 @@ html{
     scroll-behavior: smooth;
 
 }
+
 
