@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lift Containment System | Lift Containment Systems</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="images/PCS Logo.png" type="image/png">
+
+<style>
+:root {
+  --primary: #0b5ed7;
+  --dark: #0f172a;
+  --light: #f1f5f9;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #e6edf6, #f8fafc);
+  color: var(--dark);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 50px auto 120px;
+  padding: 45px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.08);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 0;
+}
+
+h2 {
+  margin-top: 45px;
+}
+
+p {
+  font-size: 1.05rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  align-items: center;
+}
+
+.hero img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.gallery {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.gallery img {
+  width: 80px;
+  border-radius: 6px;
+  border: 2px solid #e5e7eb;
+}
+
+.features li {
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 2.1rem;
+  font-weight: bold;
+  color: var(--primary);
+  margin: 25px 0 10px;
+}
+
+.buy-box {
+  margin-top: 35px;
+  padding: 30px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #0b5ed7, #084298);
+  color: #fff;
+  max-width: 460px;
+  box-shadow: 0 12px 28px rgba(11,94,215,0.4);
+}
+
+.buy-box h2 {
+  margin-top: 0;
+}
+
+.btn {
+  display: block;
+  padding: 16px;
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-bottom: 14px;
+}
+
+.stripe {
+  background: #ffffff;
+  color: var(--primary);
+}
+
+.trust {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+  font-size: 0.9rem;
+}
+
+.trust span {
+  background: rgba(255,255,255,0.15);
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.note {
+  font-size: 13px;
+  opacity: 0.9;
+  margin-top: 10px;
+}
+
+.info-box {
+  background: #f8fafc;
+  border-left: 5px solid var(--primary);
+  padding: 20px 25px;
+  border-radius: 10px;
+  margin-top: 25px;
+}
+
+.spec-download {
+  display: inline-block;
+  margin-top: 15px;
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+details {
+  border-bottom: 1px solid #ddd;
+  padding: 16px 0;
+}
+
+summary {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* MOBILE CTA */
+.mobile-cta {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 25px 15px 140px;
+    padding: 30px 25px;
+  }
+
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  .mobile-cta {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #0b5ed7;
+    padding: 14px;
+    z-index: 100;
+  }
+
+  .mobile-cta a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/* DISCLAIMER STYLING */
+.disclaimer {
+  background: #72a6e0;
+  border-top: 1px solid #ffe69c;
+  border-bottom: 1px solid #ffe69c;
+  padding: 30px 0;
+}
+
+.disclaimer-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.notice-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 12px;
+}
+
+.notice-text {
+  font-weight: bold;
+  color: #aa140a;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.notice-line {
+  flex: 1;
+  height: 1px;
+  background: #bd7422;
+  max-width: 120px;
+}
+
+.disclaimer-text {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #775f12;
+  line-height: 1.5;
+}
+
+.footer {
+  font-size: 1 em;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <img src="images/product-main.jpg" alt="Lift Containment System">
+      <div class="gallery">
+        <img src="images/product-main.jpg" alt="">
+        <img src="images/product-side.jpg" alt="">
+        <img src="images/product-installed.jpg" alt="">
+      </div>
+    </div>
+
+    <div>
+      <h1>Lift Containment System</h1>
+      <p>
+        Engineered to improve safety, reduce liability, and provide reliable containment
+        during professional lift operations.
+      </p>
+
+      <ul class="features">
+        <li>Heavy-duty industrial steel construction</li>
+        <li>Designed specifically for lift environments</li>
+        <li>Improves safety and operational control</li>
+        <li>Fast, straightforward installation</li>
+      </ul>
+
+      <p class="price">$XXXX.XX</p>
+
+      <div class="buy-box" id="buy">
+        <h2>Secure Checkout</h2>
+
+        <a href="https://buy.stripe.com/test_dRmdRa0e67Hc2Bo8XC4wM00" class="btn stripe">
+          Pay with Card
+        </a>
+
+        <div class="trust">
+          <span>✔ Secure Payment</span>
+          <span>✔ Professional Use</span>
+          <span>✔ Fast Processing</span>
+        </div>
+
+        <p class="note">
+          Shipping details are securely collected during checkout.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DELIVERY INFO -->
+  <h2>Delivery Information</h2>
+  <div class="info-box">
+    <p><strong>Processing Time:</strong> Orders ship within 2–3 business days.</p>
+    <p><strong>Shipping Method:</strong> Ground shipping via trusted freight and parcel carriers.</p>
+    <p><strong>Estimated Delivery:</strong> 5–7 business days within the continental U.S.</p>
+    <p><strong>International Shipping:</strong> Available upon request. Please contact us.</p>
+  </div>
+
+<!-- DISCLAIMER SECTION -->
+<section class="disclaimer">
+  <div class="container disclaimer-inner">
+
+    <div class="notice-row">
+      <span class="notice-line"></span>
+      <span class="notice-text">Important Notice</span>
+      <span class="notice-line"></span>
+    </div>
+
+    <p class="disclaimer-text">
+      <strong>Disclaimer:</strong> The Lift Containment System is <strong>not a safety device</strong>
+      and is not intended to replace proper safety equipment, procedures, or training.
+      Users are responsible for ensuring compliance with all applicable safety regulations,
+      standards, and workplace practices.
+    </p>
+
+  </div>
+</section>
+
+  <!-- SPEC SHEET -->
+   <!--
+  <h2>Technical Documentation</h2>
+  <p>
+    Download the full technical specification sheet for dimensions, materials,
+    and installation requirements.
+  </p>
+  <a href="documents/Lift-Containment-System-Spec-Sheet.pdf" class="spec-download" download>
+    Download Spec Sheet (PDF)
+  </a>
+  -->
+
+  <!-- FAQ -->
+  <h2>Frequently Asked Questions</h2>
+
+  <details>
+    <summary>Will this work with my lift?</summary>
+    <p>Yes. It is compatible with most standard lifts. Custom sizing is available.</p>
+  </details>
+
+  <details>
+    <summary>How long does installation take?</summary>
+    <p>Most installations take under one hour.</p>
+  </details>
+
+  <details>
+    <summary>Is this suitable for commercial use?</summary>
+    <p>Yes. Designed specifically for professional and industrial environments.</p>
+  </details>
+
+  <details>
+    <summary>Do you offer bulk pricing?</summary>
+    <p>Yes. Please contact us for volume or dealer pricing.</p>
+  </details>
+
+</div>
+
+<footer class="footer">
+  <p>© 2024 Professional Construction Services Unlimited, LLC. All Rights Reserved.</p>
+</footer>
+
+<!-- MOBILE CTA -->
+<div class="mobile-cta">
+  <a href="#buy">Buy Now – Secure Checkout</a>
+</div>
+</script>
+</body>
+</html>

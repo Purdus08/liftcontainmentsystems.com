@@ -1,0 +1,73 @@
+/* Styling for the table */
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+/* General Body Styling */
+body {
+    background-color: #1a1a1a; /* Dark background for the body */
+    color: #e1e4f3; /* Light text color for better contrast */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 50px; /* Reduced margin for a better layout */
+}
+
+th, td {
+    padding: 15px; /* Reduced padding for a more compact layout */
+    text-align: center;
+    border: 1px solid #444; /* Darker border for the table */
+}
+
+/* Header Styling */
+th {
+    background-color: #333; /* Dark background for headers */
+    color: #fff; /* White text for headers */
+}
+
+/* Table Rows Styling */
+tr:nth-child(even) {
+    background-color: #2c2c2c; /* Dark gray for even rows */
+}
+
+tr:nth-child(odd) {
+    background-color: #222; /* Slightly darker gray for odd rows */
+}
+
+/* Highlighting on hover */
+tr:hover {
+    background-color: #444; /* Lighter gray when hovering over rows */
+}
+
+/* H1 Styling */
+h1 {
+    color: #fff; /* White text for the title */
+    text-align: center;
+    margin-top: 40px; /* Adjusted margin */
+    font-size: 32px; /* Larger font size for the title */
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+footer {
+    background-color: #1E1E1E;
+    padding: 20px;
+    text-align: center;
+    color: #888;
+  }
+  
+  footer p {
+    font-size: 1em;
+  }
+  
