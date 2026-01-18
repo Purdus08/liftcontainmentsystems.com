@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Financials | Lift Containment Systems</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="icon" href="images/PCS Logo.png" type="image/png">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    :root {
+      --primary: #635bff;
+      --secondary: #ff7f50;
+      --usersColor: #22c55e;
+      --dark: #1f2937;
+      --gray: #6b7280;
+      --bg: #f4f6f8;
+      --border: #e5e7eb;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 40px 25px;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+
+    h1 { margin-top: 0; font-size: 36px; }
+    .subtitle { color: var(--gray); font-size: 17px; margin-bottom: 40px; max-width: 700px; }
+
+    .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 40px; }
+    .card { padding: 20px; border: 1px solid var(--border); border-radius: 12px; background: #fafafa; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 15px 30px rgba(0,0,0,0.12); }
+
+    .card h3 { margin: 0 0 10px; font-size: 14px; text-transform: uppercase; color: var(--gray); letter-spacing: 0.5px; }
+    .card p { font-size: 22px; font-weight: bold; margin: 0; color: var(--dark); }
+
+    table { width: 100%; border-collapse: collapse; margin-top: 30px; }
+    thead { background: #f9fafb; }
+    th, td { padding: 14px 16px; border-bottom: 1px solid var(--border); text-align: left; }
+    th { font-size: 14px; color: var(--gray); text-transform: uppercase; letter-spacing: 0.5px; }
+    td { font-size: 15px; }
+    td strong { font-weight: 600; }
+    tbody tr:hover { background: #f4f6f8; }
+
+    .btn-pdf { display: inline-block; padding: 12px 25px; background: var(--primary); color: #fff; text-decoration: none; border-radius: 10px; margin-top: 30px; font-weight: bold; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .btn-pdf:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+
+    .assumptions { margin-top: 60px; padding: 25px; background: #fafafa; border-left: 6px solid var(--primary); border-radius: 8px; }
+    .assumptions h2 { margin-top: 0; }
+    canvas { margin-top: 40px; max-width: 100%; }
+
+    footer { text-align: center; padding: 20px; color: var(--gray); font-size: 13px; margin-top: 60px; }
+
+    @media (max-width: 768px) { h1 { font-size: 28px; } .subtitle { font-size: 16px; } table { font-size: 14px; } }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Financial Overview</h1>
+    <p class="subtitle">Projected growth, sales, and profits for Lift Containment Systems over a three-year period.</p>
+
+    <div class="summary">
+      <div class="card"><h3>Year 1 Revenue</h3><p>$500,000</p></div>
+      <div class="card"><h3>Year 2 Revenue</h3><p>$4,000,000</p></div>
+      <div class="card"><h3>Year 3 Revenue</h3><p>$16,000,000</p></div>
+      <div class="card"><h3>Gross Profit (Y3)</h3><p>$216,000,000</p></div>
+    </div>
+
+    <table>
+      <thead>
+        <tr><th>Metric</th><th>Year 1</th><th>Year 2</th><th>Year 3</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Users</strong></td><td>50,000</td><td>400,000</td><td>1,600,000</td></tr>
+        <tr><td><strong>Total Sales</strong></td><td>$500,000</td><td>$4,000,000</td><td>$16,000,000</td></tr>
+        <tr><td><strong>Avg. Price Per Sale</strong></td><td>$75</td><td>$80</td><td>$90</td></tr>
+        <tr><td><strong>Revenue at 15%</strong></td><td>$5,625,000</td><td>$48,000,000</td><td>$216,000,000</td></tr>
+        <tr><td><strong>Gross Profit</strong></td><td>$5,625,000</td><td>$48,000,000</td><td>$216,000,000</td></tr>
+      </tbody>
+    </table>
+
+    <a href="financials.pdf" download class="btn-pdf">Download Full PDF Financials</a>
+
+    <canvas id="financialChart"></canvas>
+
+    <div class="assumptions">
+      <h2>Assumptions</h2>
+      <ul>
+        <li>Average price per sale grows from $75 → $90 over 3 years.</li>
+        <li>User growth is projected based on market research and current demand.</li>
+        <li>Revenue is calculated at a 15% profit margin on total sales.</li>
+        <li>All projections assume stable market conditions and consistent operational capacity.</li>
+      </ul>
+    </div>
+  </div>
+
+         <!-- DISCLAIMER -->
+<section class="disclaimer">
+  <div class="container">
+    <h4>Important Notice</h4>
+    <p>
+      <strong>Disclaimer:</strong> The Lift Containment System is <strong>not a safety device</strong>
+      and is not intended to replace proper safety equipment, procedures, or training.
+      Users are responsible for ensuring compliance with all applicable safety regulations,
+      standards, and workplace practices.
+    </p>
+  </div>
+</section>
+
+  <footer>© 2024 Professional Construction Services Unlimited, LLC. All Rights Reserved.</footer>
+
+  <script>
+    const ctx = document.getElementById('financialChart').getContext('2d');
+
+    const financialChart = new Chart(ctx, {
+      data: {
+        labels: ['Year 1', 'Year 2', 'Year 3'],
+        datasets: [
+          { type: 'bar', label: 'Revenue ($)', data: [500000, 4000000, 16000000], backgroundColor: '#635bff', borderRadius: 8 },
+          { type: 'bar', label: 'Gross Profit ($)', data: [5625000, 48000000, 216000000], backgroundColor: '#ff7f50', borderRadius: 8 },
+          { type: 'line', label: 'Users', data: [50000, 400000, 1600000], borderColor: '#22c55e', borderWidth: 3, fill: false, tension: 0.4, pointBackgroundColor: '#22c55e', pointRadius: 6 }
+        ]
+      },
+      options: {
+        responsive: true,
+        animation: { duration: 2000, easing: 'easeOutQuart' },
+        plugins: {
+          legend: { position: 'top' },
+          tooltip: { mode: 'index', intersect: false },
+          // Custom plugin for number labels
+          datalabels: false
+        },
+        scales: { y: { beginAtZero: true, ticks: { callback: val => val.toLocaleString() } } }
+      },
+      plugins: [{
+        id: 'barNumbers',
+        afterDatasetsDraw(chart) {
+          const ctx = chart.ctx;
+          chart.data.datasets.forEach((dataset, i) => {
+            if(dataset.type === 'bar') {
+              const meta = chart.getDatasetMeta(i);
+              meta.data.forEach((bar, index) => {
+                const val = dataset.data[index];
+                ctx.fillStyle = '#000';
+                ctx.font = 'bold 13px Arial';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'bottom';
+                ctx.fillText(val.toLocaleString(), bar.x, bar.y - 6);
+              });
+            }
+          });
+        }
+      }]
+    });
+  </script>
+</script>
+</body>
+
+</html>
