@@ -64,7 +64,7 @@ a{
 
 }
 
-/* hero section */
+/* hero */
 
 .hero{
     height: 100vh;
@@ -208,7 +208,7 @@ nav ul li a{
 }
 
 
-/* about section */
+/* about */
 
 .about{
     background-image: url(images/colorful.png);
@@ -270,7 +270,7 @@ nav ul li a{
 
 }
 
-/* newsletter section */
+/* newsletter */
 
 .newsletter{
     background-image: linear-gradient(rgba(24,46,96,1),rgba(24,46,96,.05)),url(images/background.png);
@@ -329,18 +329,18 @@ nav ul li a{
             border: none;
         }
 
-        /* Add styles for textarea */
+        /* styles for textarea */
 
-        /* Ensure consistent font style for email and message boxes */
+        /* make sure consistent font style for email and message boxes */
     input[type="email"], textarea {
         width: 100%;
-        max-width: 400px; /* Optional: Set a max width for better layout */
+        max-width: 400px; /* <-- can set a max width for better layout */
         padding: 12px;
         border-radius: 48px;
         outline: none;
         border: 1px solid var(--bodycopyclr);
         font-family: 'Montserrat', sans-serif;
-        font-size: 14px; /* Optional: Make sure the font size is consistent */
+        font-size: 14px; /* <-- can make sure the font size is consistent */
     }
   
         textarea {
@@ -350,10 +350,10 @@ nav ul li a{
             /*border-radius: 48px;*/
             /*outline: none;*/
             /*border: 1px solid var(--bodycopyclr);*/
-            resize: vertical; /* Allow users to resize vertically */
-            margin-top: 10px; /* Space between input and textarea */
-            margin-bottom: 20px; /* Space between textarea and button */
-            height: 80px; /* Optional: Set a default height */
+            resize: vertical; /* allow users to resize vertically */
+            margin-top: 10px; /* space between input and textarea */
+            margin-bottom: 20px; /* space between textarea and button */
+            height: 80px; /* <-- can set a default height */
         }
 
         button {
@@ -364,7 +364,7 @@ nav ul li a{
             border-radius: 24px;
             /*flex-shrink: 0;*/
             cursor: pointer;
-            font-size: 16px; /* Optional: Adjust font size for better readability */
+            font-size: 16px; /* <-- can adjust font size for better readability */
         }
 
         #email {
@@ -425,7 +425,7 @@ nav ul li a{
         }
     }
 
-/* service section */
+/* service */
 
 .service{
     background-image: url(images/better.jpg);
@@ -490,9 +490,7 @@ nav ul li a{
     }
 }
 
-/* =========================
-   CTA SECTION
-========================= */
+/* CTA */
 
 .cta-section {
     background: linear-gradient(135deg, #ff9800, #ff6a00);
@@ -520,7 +518,7 @@ nav ul li a{
     color:#faf9ff;
   }
   
-  /* CTA BUTTON */
+  /* cta button */
   .cta-btn {
     display: inline-flex;
     align-items: center;
@@ -559,9 +557,7 @@ nav ul li a{
     opacity: 0.9;
   }
   
-  /* =========================
-     ANIMATION
-  ========================= */
+  /* ANIMATION */
   
   @keyframes fadeUp {
     from {
@@ -574,9 +570,7 @@ nav ul li a{
     }
   }
   
-  /* =========================
-     MOBILE STICKY CTA
-  ========================= */
+  /* mobile sticky cta */
   
   .mobile-sticky-cta {
     position: fixed;
@@ -644,7 +638,7 @@ nav ul li a{
   }
   */
 
-/* DISCLAIMER STYLING */
+/* DISCLAIMER */
 .disclaimer {
   background: #fffc30;
   border-top: 1px solid #fffc30;
@@ -743,4 +737,5 @@ footer{
 
 html{
     scroll-behavior: smooth;
+
 }
