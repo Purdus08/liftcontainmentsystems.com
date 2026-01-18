@@ -79,3 +79,22 @@ window.addEventListener('scroll', () => {
     console.log('Sticky CTA clicked');
   });
   
+
+  const backToTop = document.getElementById("backToTop");
+
+// Show button after scrolling
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    backToTop.style.display = "flex";
+  } else {
+    backToTop.style.display = "none";
+  }
+});
+
+// Scroll to top on click
+backToTop.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
