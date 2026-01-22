@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Lift Containment System | Lift Containment Systems</title>
+<title>Products | Professional Construction Services Unlimited</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="images/PCS Logo.png" type="image/png">
 
@@ -20,136 +20,114 @@ body {
   color: var(--dark);
 }
 
+/* CONTAINER */
 .container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 50px auto 120px;
-  padding: 45px;
+  padding: 50px;
   background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 20px 45px rgba(0,0,0,0.08);
+  border-radius: 16px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.1);
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.6rem;
   margin-top: 0;
 }
 
 h2 {
-  margin-top: 45px;
+  margin-top: 60px;
+  font-size: 2.2rem;
+}
+
+h3 {
+  font-size: 1.9rem;
+  margin-top: 0;
 }
 
 p {
   font-size: 1.05rem;
+  line-height: 1.6;
 }
 
-.hero {
+/* PRODUCT */
+.product {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 45px;
+  margin-bottom: 90px;
   align-items: center;
 }
 
-.hero img {
+.product img.main-img {
   width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+  border-radius: 14px;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.18);
 }
 
-.gallery {
+.product-gallery {
   display: flex;
-  gap: 10px;
-  margin-top: 12px;
+  gap: 14px;
+  margin-top: 15px;
 }
 
-.gallery img {
-  width: 80px;
-  border-radius: 6px;
+.product-gallery img {
+  width: 115px;
+  border-radius: 8px;
   border: 2px solid #e5e7eb;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-.features li {
-  margin-bottom: 10px;
+.product-gallery img:hover {
+  transform: scale(1.05);
+  border-color: var(--primary);
 }
 
-.price {
-  font-size: 2.1rem;
-  font-weight: bold;
-  color: var(--primary);
-  margin: 25px 0 10px;
+/* DETAILS */
+.product ul {
+  margin-top: 18px;
+  padding-left: 20px;
 }
 
+.product ul li {
+  margin-bottom: 8px;
+}
+
+/* BUY BOX */
 .buy-box {
-  margin-top: 35px;
+  margin-top: 30px;
   padding: 30px;
   border-radius: 14px;
   background: linear-gradient(135deg, #0b5ed7, #084298);
   color: #fff;
-  max-width: 460px;
   box-shadow: 0 12px 28px rgba(11,94,215,0.4);
 }
 
-.buy-box h2 {
-  margin-top: 0;
-}
-
-.btn {
+.buy-box a {
   display: block;
+  background: #ffffff;
+  color: var(--primary);
   padding: 16px;
   text-align: center;
-  font-size: 17px;
+  font-size: 1.1rem;
   font-weight: bold;
   border-radius: 8px;
   text-decoration: none;
-  margin-bottom: 14px;
-}
-
-.stripe {
-  background: #eeeded;
-  color: var(--primary);
-}
-
-.trust {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 18px;
-  font-size: 0.9rem;
-}
-
-.trust span {
-  background: rgba(255,255,255,0.15);
-  padding: 6px 10px;
-  border-radius: 6px;
+  margin-top: 14px;
 }
 
 .note {
-  font-size: 13px;
+  font-size: 0.9rem;
   opacity: 0.9;
   margin-top: 10px;
 }
 
-.info-box {
-  background: #b3effa;
-  border-left: 5px solid var(--primary);
-  padding: 20px 25px;
-  border-radius: 10px;
-  margin-top: 25px;
-}
-
-.spec-download {
-  display: inline-block;
-  margin-top: 15px;
-  background: var(--primary);
-  color: #fff;
-  padding: 12px 18px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
+/* FAQ DETAILS */
 details {
+  margin-top: 15px;
   border-bottom: 1px solid #ddd;
-  padding: 16px 0;
+  padding-bottom: 12px;
 }
 
 summary {
@@ -157,48 +135,35 @@ summary {
   cursor: pointer;
 }
 
-/* MOBILE CTA */
-.mobile-cta {
-  display: none;
-}
-
+/* MOBILE */
 @media (max-width: 768px) {
   .container {
-    margin: 25px 15px 140px;
     padding: 30px 25px;
   }
 
-  h1 {
-    font-size: 1.9rem;
+  .product {
+    grid-template-columns: 1fr;
   }
 
-  .mobile-cta {
-    display: flex;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #0b5ed7;
-    padding: 14px;
-    z-index: 100;
-  }
-
-  .mobile-cta a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1rem;
-    text-align: center;
-    width: 100%;
+  .product-gallery img {
+    width: 90px;
   }
 }
 
-/* DISCLAIMER STYLING */
-.disclaimer {
-  background: #e72525;
-  border-top: 1px solid #ffe69c;
-  border-bottom: 1px solid #ffe69c;
+/* FOOTER */
+.footer {
+  text-align: center;
+  color: #f1f5f9;
   padding: 30px 0;
+}
+
+/* DISCLAIMER */
+.disclaimer {
+  background: #fff3cd;
+  border-top: 2px solid #ffe69c;
+  border-bottom: 2px solid #ffe69c;
+  padding: 35px 20px;
+  margin-top: 80px;
 }
 
 .disclaimer-inner {
@@ -207,40 +172,58 @@ summary {
   text-align: center;
 }
 
-.notice-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 12px;
-}
-
-.notice-text {
+.disclaimer-title {
   font-weight: bold;
-  color: #aa140a;
-  font-size: 1rem;
-  white-space: nowrap;
-}
-
-.notice-line {
-  flex: 1;
-  height: 1px;
-  background: #bd7422;
-  max-width: 120px;
+  color: #856404;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
 }
 
 .disclaimer-text {
-  margin: 0;
   font-size: 0.95rem;
-  color: #775f12;
-  line-height: 1.5;
+  color: #856404;
+  line-height: 1.6;
 }
 
-.footer {
-  font-size: 1 em;
+/* SECTION DIVIDER */
+.section-divider {
+  margin: 80px 0 70px;
   text-align: center;
-  color:#f1f5f9;
+  position: relative;
 }
+
+.section-divider::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: #d1d5db;
+  z-index: 1;
+}
+
+.section-divider span {
+  background: #fff;
+  padding: 0 20px;
+  font-weight: bold;
+  color: #374151;
+  font-size: 1.1rem;
+  position: relative;
+  z-index: 2;
+  letter-spacing: 0.5px;
+}
+
+/* OPTIONAL SUBTITLE */
+.section-subtitle {
+  text-align: center;
+  font-size: 1rem;
+  color: #6b7280;
+  margin-top: -40px;
+  margin-bottom: 60px;
+}
+
 </style>
 </head>
 
@@ -248,131 +231,334 @@ summary {
 
 <div class="container">
 
-  <!-- HERO -->
-  <div class="hero">
-    <div>
-      <img src="images/img_7285.jpg" alt="Lift Containment System">
-      <div class="gallery">
-        <img src="images/product-main.jpg" alt="">
-        <img src="images/product-side.jpg" alt="">
-        <img src="images/product-installed.jpg" alt="">
-      </div>
-    </div>
+<h1>Our Products</h1>
+<p>
+Professional-grade containment and structural solutions engineered
+for demanding lift and construction environments.
+</p>
 
-    <div>
-      <h1>Lift Containment System</h1>
+<!-- ================= PRODUCT 1 ================= -->
+<div class="product">
+
+  <div>
+    <img src="images/EntireSystem.jpg" alt="Lift Containment System" class="main-img">
+
+    <div class="product-gallery">
+      <img src="images/EntireSystem.jpg" alt="">
+      <img src="images/SquareUBolt.jpg" alt="">
+      <img src="images/CornerBracket.jpg" alt="">
+      <img src="images/IndividualPole.jpg" alt="">
+      <img src="images/ToteBagReplacement.jpg" alt="">
+    </div>
+  </div>
+
+  <div>
+    <h3>Lift Containment System</h3>
+    <p>
+      The Lift Containment System is engineered to improve operational
+      control, reduce material loss, and enhance jobsite organization
+      during lift operations.
+    </p>
+
+    <ul>
+      <li>Heavy-duty industrial steel construction</li>
+      <li>Compatible with most standard lifts</li>
+      <li>Fast, straightforward installation</li>
+      <li>Designed for professional use</li>
+    </ul>
+
+    <details>
+      <summary>More Product Details</summary>
       <p>
-        Engineered to improve safety, reduce liability, and provide reliable containment
-        during professional lift operations.
+        This system is designed for repeated daily use in demanding
+        environments. All components are precision manufactured and
+        field-tested to ensure long-term durability.
       </p>
+    </details>
 
-      <ul class="features">
-        <li>Heavy-duty industrial steel construction</li>
-        <li>Designed specifically for lift environments</li>
-        <li>Improves safety and operational control</li>
-        <li>Fast, straightforward installation</li>
-      </ul>
-
-      <p class="price">$XXXX.XX</p>
-
-      <div class="buy-box" id="buy">
-        <h2>Secure Checkout</h2>
-
-        <a href="https://buy.stripe.com/test_00w7sKac64Zd1S88Sl1VK00" class="btn stripe">
-          Pay with Card
-        </a>
-
-        <div class="trust">
-          <span>✔ Secure Payment</span>
-          <span>✔ Professional Use</span>
-          <span>✔ Fast Processing</span>
-        </div>
-
-        <p class="note">
-          Shipping details are securely collected during checkout.
-        </p>
-      </div>
+    <div class="buy-box">
+      <strong>Secure Checkout For All Products</strong>
+      <a href="https://buy.stripe.com/5kQ4gy5Qn56LesU3gS6kg01">
+        View Pricing & Buy
+      </a>
+      <p class="note">Shipping calculated at checkout.</p>
     </div>
   </div>
 
-  <!-- DELIVERY INFO -->
-  <h2>Delivery Information</h2>
-  <div class="info-box">
-    <p><strong>Processing Time:</strong> Orders ship within 2–3 business days.</p>
-    <p><strong>Shipping Method:</strong> Ground shipping via trusted freight and parcel carriers.</p>
-    <p><strong>Estimated Delivery:</strong> 5–7 business days within the continental U.S.</p>
-    <p><strong>International Shipping:</strong> Available upon request. Please contact us.</p>
+</div>
+
+<div class="section-divider">
+  <span>Individual Components & Replacement Parts</span>
+</div>
+
+<p class="section-subtitle">
+  Modular components designed to replace, expand, or customize your containment system.
+</p>
+
+<!-- ================= PRODUCT 2 ================= -->
+<div class="product">
+
+  <div>
+    <img src="images/EntireSystem.jpg" alt="Corner Bracket Assembly" class="main-img">
+
+    <div class="product-gallery">
+      <img src="images/EntireSystem.jpg" alt="">
+      <!--<img src="images/CornerBracket-Alt.jpg" alt="">-->
+    </div>
   </div>
+
+  <div>
+    <h3>Complete Lift Containment System</h3>
+    <p>
+      The Complete Lift Containment System includes all necessary components for a 
+      full containment solution, ready for installation.
+    </p>
+
+    <ul>
+      <li>New installations</li>
+      <li>Fleet standardization</li>
+      <li>Multi-site operations</li>
+    </ul>
+
+    <details>
+      <summary>More Product Details</summary>
+      <p>
+        This full assembly package includes structural poles, brackets, fastening hardware, 
+        and containment components required for deployment. Designed for efficiency and durability, 
+        it provides a comprehensive solution for organizations implementing 
+        containment for the first time or upgrading existing equipment.
+      </p>
+    </details>
+
+    <div class="buy-box">
+      <strong>Secure Checkout for Entire System</strong>
+      <a href="https://buy.stripe.com/28E14m2Ebar52Kc8Bc6kg02">
+        View Pricing & Buy
+      </a>
+      <p class="note">Bulk pricing available at checkout.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- ================= PRODUCT 3 ================= -->
+<div class="product">
+
+  <div>
+    <img src="images/ToteBagReplacement.jpg" alt="Corner Bracket Assembly" class="main-img">
+
+    <div class="product-gallery">
+      <img src="images/ToteBagReplacement.jpg" alt="">
+      <!--<img src="images/CornerBracket-Alt.jpg" alt="">-->
+    </div>
+  </div>
+
+  <div>
+    <h3>Replacement Tote Bag</h3>
+    <p>
+      The Replacement Tote Bag is designed to restore functionality to existing 
+      lift containment systems without replacing the full assembly.
+    </p>
+
+    <ul>
+      <li>Quick replacement</li>
+      <li>Durable construction</li>
+      <li>Designed for professional use</li>
+    </ul>
+
+    <details>
+      <summary>More Product Details</summary>
+      <p>
+        Constructed from heavy-duty material, this tote bag is engineered to handle 
+        repeated loading and unloading cycles. 
+        It installs easily onto compatible containment frames and is ideal for maintenance 
+        replacements due to wear or damage. A cost-effective way to extend the life of your system.
+      </p>
+    </details>
+
+    <div class="buy-box">
+      <strong>Secure Checkout for Tote Bag</strong>
+      <a href="https://buy.stripe.com/28E6oGgv16aPfwYaJk6kg03">
+        View Pricing & Buy
+      </a>
+      <p class="note">Bulk pricing available at checkout.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- ================= PRODUCT 4 ================= -->
+<div class="product">
+
+  <div>
+    <img src="images/CornerBracket.jpg" alt="Corner Bracket Assembly" class="main-img">
+
+    <div class="product-gallery">
+      <img src="images/CornerBracket.jpg" alt="">
+     <!-- <img src="images/CornerBracket-Alt.jpg" alt=""> -->
+    </div>
+  </div>
+
+  <div>
+    <h3>Corner Bracket Assembly</h3>
+    <p>
+      Reinforced corner bracket assemblies designed to provide
+      structural integrity and stability in containment systems.
+    </p>
+
+    <ul>
+      <li>Precision-cut steel brackets</li>
+      <li>Corrosion-resistant finish</li>
+      <li>Heavy-duty fasteners included</li>
+    </ul>
+
+    <details>
+      <summary>More Product Details</summary>
+      <p>
+        Ideal for replacement or custom installations, these brackets
+        are engineered to withstand repeated loading and harsh jobsite
+        conditions.
+      </p>
+    </details>
+
+    <div class="buy-box">
+      <strong>Secure Checkout for Corner Bracket</strong>
+      <a href="https://buy.stripe.com/6oU00ia6D56LesUdVw6kg04">
+        View Pricing & Buy
+      </a>
+      <p class="note">Bulk pricing available at checkout.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- ================= PRODUCT 5 ================= -->
+<div class="product">
+
+  <div>
+    <img src="images/SOFPolesExtended.jpg" alt="Corner Bracket Assembly" class="main-img">
+
+    <div class="product-gallery">
+      <img src="images/SOFPolesExtended.jpg" alt="">
+      <img src="images/IndPole.jpg" alt="">
+      <img src="images/IndividualPole.jpg" alt="">
+    </div>
+  </div>
+
+  <div>
+    <h3>Containment Poles(Individual & Extended)</h3>
+    <p>
+      Containment Poles are vertical support members used to create and maintain
+      the structural framework of the Lift Containment System.
+    </p>
+
+    <ul>
+      <li>System expansion</li>
+      <li>Replacement poles</li>
+      <li>Costum containment layouts</li>
+    </ul>
+
+    <details>
+      <summary>More Product Details</summary>
+      <p>
+        Available in individual and extended configurations, these poles are engineered for strength,
+        alignment, and ease of installation. The modular design allows users to 
+        adapt system height and configuration based on operational needs. 
+        Finished for durability, they are suitable for repeated use in industrial and commercial environments.
+      </p>
+    </details>
+
+    <div class="buy-box">
+      <strong>Secure Checkout for Containment Pole</strong>
+      <a href="https://buy.stripe.com/aFa5kC3IfdDhdoQ7x86kg05">
+        View Pricing & Buy
+      </a>
+      <p class="note">Bulk pricing available at checkout.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- ================= PRODUCT 6 ================= -->
+<div class="product">
+
+  <div>
+    <img src="images/SquareUBolt.jpg" alt="Corner Bracket Assembly" class="main-img">
+
+    <div class="product-gallery">
+      <img src="images/SquareUBolt.jpg" alt="">
+      <!--<img src="images/CornerBracket-Alt.jpg" alt="">-->
+    </div>
+  </div>
+
+  <div>
+    <h3>Square U-Bolt Kit</h3>
+    <p>
+      The Square U-Bolt Kit is designed to provide secure attachment
+      points for containment system components, ensuring reliable clamping and long-term stability.
+    </p>
+
+    <ul>
+      <li>Heavy-duty steel construction</li>
+      <li>Designed for high clamping force</li>
+      <li>Compatible with lift containment components</li>
+    </ul>
+
+    <details>
+      <summary>More Product Details</summary>
+      <p>
+        Manufactured from industrial-grade steel, these square U-bolts are designed
+        to resist deformation under load. They allow for firm attachment to lift
+        rails or structural members while maintaining proper alignment.
+        Ideal for replacements, upgrades, or custom containment configurations.
+      </p>
+    </details>
+
+    <div class="buy-box">
+      <strong>Secure Checkout for Square U-Bolt</strong>
+      <a href="https://buy.stripe.com/bJedR84Mj2YD70s9Fg6kg06">
+        View Pricing & Buy
+      </a>
+      <p class="note">Bulk pricing available at checkout.</p>
+    </div>
+  </div>
+
+</div>
+
+</div>
 
 <!-- DISCLAIMER -->
 <section class="disclaimer">
-  <div class="container disclaimer-inner">
-
-    <div class="notice-row">
-      <span class="notice-line"></span>
-      <span class="notice-text">Important Notice</span>
-      <span class="notice-line"></span>
-    </div>
-
+  <div class="disclaimer-inner">
+    <div class="disclaimer-title">IMPORTANT NOTICE</div>
     <p class="disclaimer-text">
-      <strong>Disclaimer:</strong> The Lift Containment System is <strong>not a safety device</strong>
-      and is not intended to replace proper safety equipment, procedures, or training.
-      Users are responsible for ensuring compliance with all applicable safety regulations,
-      standards, and workplace practices.
+      The products displayed on this page are <strong>not safety devices</strong>
+      and are not intended to replace required safety equipment, fall protection,
+      training, supervision, or compliance with applicable OSHA regulations or
+      workplace safety standards. Users are solely responsible for ensuring proper
+      use, installation, inspection, and compliance with all applicable laws,
+      regulations, and jobsite safety requirements.
     </p>
-
   </div>
 </section>
-
-  <!-- SPEC SHEET -->
-   <!--
-  <h2>Technical Documentation</h2>
-  <p>
-    Download the full technical specification sheet for dimensions, materials,
-    and installation requirements.
-  </p>
-  <a href="documents/Lift-Containment-System-Spec-Sheet.pdf" class="spec-download" download>
-    Download Spec Sheet (PDF)
-  </a>
-  -->
-
-  <!-- FAQ -->
-  <h2>Frequently Asked Questions</h2>
-
-  <details>
-    <summary>Will this work with my lift?</summary>
-    <p>Yes. It is compatible with most standard lifts. Custom sizing is available.</p>
-  </details>
-
-  <details>
-    <summary>How long does installation take?</summary>
-    <p>Most installations take under one hour.</p>
-  </details>
-
-  <details>
-    <summary>Is this suitable for commercial use?</summary>
-    <p>Yes. Designed specifically for professional and industrial environments.</p>
-  </details>
-
-  <details>
-    <summary>Do you offer bulk pricing?</summary>
-    <p>Yes. Please contact us for volume or dealer pricing.</p>
-  </details>
-
-</div>
 
 <footer class="footer">
   <p>© 2024 Professional Construction Services Unlimited, LLC. All Rights Reserved.</p>
 </footer>
 
-<!-- MOBILE CTA -->
-<div class="mobile-cta">
-  <a href="#buy">Buy Now – Secure Checkout</a>
-</div>
+<!-- IMAGE SWITCH SCRIPT -->
+<script>
+document.querySelectorAll('.product').forEach(product => {
+  const mainImg = product.querySelector('.main-img');
+  const thumbs = product.querySelectorAll('.product-gallery img');
+
+  thumbs.forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      mainImg.src = thumb.src;
+    });
+  });
+});
 </script>
+
 </body>
 </html>
-
-
-
-
