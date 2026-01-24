@@ -11,6 +11,8 @@
   --primary: #0b5ed7;
   --dark: #0f172a;
   --light: #f1f5f9;
+  --success: #0fee1a;
+  --belta: #15a8b3;
 }
 
 body {
@@ -48,6 +50,67 @@ h3 {
 p {
   font-size: 1.05rem;
   line-height: 1.6;
+}
+
+/* BADGE */
+.badge {
+  display: inline-block;
+  background: var(--success);
+  color: #f5f4f4;
+  font-size: 0.75rem;
+  padding: 6px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+}
+
+.badge2 {
+  display: inline-block;
+  background: var(--success);
+  color: #f5f4f4;
+  font-size: 0.75rem;
+  padding: 6px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+}
+
+.badge3 {
+  display: inline-block;
+  background: var(--belta);
+  color: #f5f4f4;
+  font-size: 0.75rem;
+  padding: 6px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+}
+
+.badge4 {
+  display: inline-block;
+  background: var(--belta);
+  color: #f5f4f4;
+  font-size: 0.75rem;
+  padding: 6px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+}
+
+.badge5 {
+  display: inline-block;
+  background: var(--belta);
+  color: #f5f4f4;
+  font-size: 0.75rem;
+  padding: 6px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+}
+
+.badge6 {
+  display: inline-block;
+  background: var(--belta);
+  color: #f5f4f4;
+  font-size: 0.75rem;
+  padding: 6px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
 }
 
 /* PRODUCT */
@@ -186,6 +249,20 @@ summary {
   line-height: 1.6;
 }
 
+/* DECISION HELPER */
+.helper {
+  background: #bcd9f5;
+  border-left: 5px solid var(--primary);
+  padding: 25px;
+  margin: 40px 0 70px;
+  border-radius: 10px;
+}
+
+.helper strong {
+  display: block;
+  margin-bottom: 10px;
+}
+
 /* SECTION DIVIDER */
 .section-divider {
   margin: 80px 0 70px;
@@ -237,6 +314,13 @@ Professional-grade containment and structural solutions engineered
 for demanding lift and construction environments.
 </p>
 
+<div class="helper">
+<strong>Which product is right for you?</strong>
+• New installations → Complete Lift Containment System<br>
+• Replacing worn parts → Individual Components<br>
+• Expanding capacity → Extended Poles
+</div>
+
 <!-- ================= PRODUCT 1 ================= -->
 <div class="product">
 
@@ -253,11 +337,12 @@ for demanding lift and construction environments.
   </div>
 
   <div>
-    <h3>Lift Containment System All Products</h3>
+    <span class="badge">POPULAR</span>
+    <h3>Lift Containment System with Extra Parts</h3>
     <p>
-      The Lift Containment System is engineered to improve operational
-      control, reduce material loss, and enhance jobsite organization
-      during lift operations.
+      Engineered to reduce dropped material incidents, 
+      improve jobsite organization, and standardize lift containment across crews—without 
+      slowing daily operations.
     </p>
 
     <ul>
@@ -281,7 +366,7 @@ for demanding lift and construction environments.
       <a href="https://buy.stripe.com/5kQ4gy5Qn56LesU3gS6kg01">
         View Pricing & Buy
       </a>
-      <p class="note">Shipping calculated at checkout.</p>
+      <p class="note">Built for professional contractors • Stripe-secured checkout</p>
     </div>
   </div>
 
@@ -308,6 +393,7 @@ for demanding lift and construction environments.
   </div>
 
   <div>
+    <span class="badge2">MOST POPULAR</span>
     <h3>Complete Lift Containment System</h3>
     <p>
       The Complete Lift Containment System includes all necessary components for a 
@@ -354,6 +440,7 @@ for demanding lift and construction environments.
   </div>
 
   <div>
+    <span class="badge3">INDIVIDUAL PARTS</span>
     <h3>Replacement Tote Bag</h3>
     <p>
       The Replacement Tote Bag is designed to restore functionality to existing 
@@ -400,6 +487,7 @@ for demanding lift and construction environments.
   </div>
 
   <div>
+    <span class="badge4">INDIVIDUAL PARTS</span>
     <h3>Corner Bracket Assembly</h3>
     <p>
       Reinforced corner bracket assemblies designed to provide
@@ -446,6 +534,7 @@ for demanding lift and construction environments.
   </div>
 
   <div>
+    <span class="badge5">INDIVIDUAL PARTS</span>
     <h3>Containment Poles(Individual & Extended)</h3>
     <p>
       Containment Poles are vertical support members used to create and maintain
@@ -492,6 +581,7 @@ for demanding lift and construction environments.
   </div>
 
   <div>
+    <span class="badge6">INDIVIDUAL PARTS</span>
     <h3>Square U-Bolt Kit</h3>
     <p>
       The Square U-Bolt Kit is designed to provide secure attachment
@@ -555,6 +645,8 @@ document.querySelectorAll('.product').forEach(product => {
   thumbs.forEach(thumb => {
     thumb.addEventListener('click', () => {
       mainImg.src = thumb.src;
+      thumbs.forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
     });
   });
 });
@@ -562,4 +654,3 @@ document.querySelectorAll('.product').forEach(product => {
 
 </body>
 </html>
-
