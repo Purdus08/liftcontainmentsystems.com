@@ -7,6 +7,7 @@
     --black:#000;
     --accent:#fc881c;
     --primary:#1020cf;
+    --basic: #f3f2f2;
 }
 
 *{
@@ -229,7 +230,7 @@ nav ul li a{
 
 
 /* about */
-
+/*
 .about{
     background-image: url(images/colorful.png);
     background-size: cover;
@@ -257,14 +258,14 @@ nav ul li a{
         width: 300px;
         height: 300px;
         height: auto;
-        /*object-fit: cover;*/
+        /*object-fit: cover;
     }
 
     .about-content{
         display: flex;
         gap: 15px;
         /*justify-content: space-between;
-        padding:100px 0;*/
+        padding:100px 0;
     }
 
     .decor-box{
@@ -288,7 +289,7 @@ nav ul li a{
     }
 
 
-}
+}*/
 
 /* newsletter */
 
@@ -447,8 +448,31 @@ nav ul li a{
 
 /* service */
 
+.service {
+  position: relative;
+  min-height: 140vh;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.service .bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Keep your content above the video */
+.service-content {
+  position: relative;
+  z-index: 1;
+}
+
+/*
 .service{
-    background-image: url(images/better.jpg);
+    background-image: url(images/ScissorLiftFlagpoleDesign.mp4);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -456,6 +480,73 @@ nav ul li a{
     border-bottom-right-radius: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+*/
+
+/* Toggle button */
+.toggle-cards {
+  margin: 60px auto 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 26px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(0,0,0,0.55);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+/* Cards collapse */
+.service-cards {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.service-cards.collapsed {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-20px);
+}
+
+
+.toggle-cards {
+  margin-top: 80px;
+  width: 20%;
+}
+
+.toggle-cards summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: white;
+  font-size: 18px;
+  padding: 12px 24px;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 30px;
+  width: fit-content;
+  margin: 0 auto 30px;
+}
+
+.togglery::-webkit-details-marker {
+  display: none;
+}
+
+.toggle-cards[open] summary i {
+  transform: rotate(180deg);
+}
+
+.toggle-cards:not([open]) .service-cards {
+  margin-top: 0;
+}
+
+.toggle-cards summary i {
+  transition: transform 0.3s ease;
+}
 
     
 
@@ -477,13 +568,17 @@ nav ul li a{
         gap: 32px;
     }
 
+    .service .card p {
+  color: #222;
+}
+
     .card{
         padding: 50px;
         text-align: center;
-        background-color: var(--white);
+        background-color: var(--basic);
         border-radius: 16px;
         box-shadow: rgba(149,157,165,.2,0,8,24);
-
+    
         i{
             color: var(--accent);
         }
@@ -508,7 +603,6 @@ nav ul li a{
             gap: 30px;
         }
     }
-}
 
 /* CTA */
 
