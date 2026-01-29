@@ -98,3 +98,19 @@ backToTop.addEventListener("click", () => {
     behavior: "smooth"
   });
 });
+
+// Toggle Service Cards
+const toggleBtn = document.getElementById("toggleCards");
+const serviceCards = document.querySelector(".service-cards");
+
+if (toggleBtn && serviceCards) {
+  toggleBtn.addEventListener("click", () => {
+    const isHidden = serviceCards.classList.toggle("collapsed");
+
+    toggleBtn.querySelector("span").textContent =
+      isHidden ? "View Services" : "Hide Services";
+
+    toggleBtn.querySelector("i").className =
+      isHidden ? "bx bx-chevron-down" : "bx bx-chevron-up";
+  });
+}
