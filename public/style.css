@@ -293,6 +293,26 @@ nav ul li a{
 
 /* newsletter */
 
+.newsletter .left-content {
+  flex: 1;
+  min-width: 480px;
+  padding-left: 25%;
+}
+
+.newsletter-text {
+  color: var(--white);
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  max-width: 60ch;
+}
+
+.newsletter-thanks {
+  color: var(--white);
+  font-weight: 700;
+  margin-top: 10px;
+}
+
 .newsletter{
     background-image: linear-gradient(rgba(24,46,96,1),rgba(24,46,96,.05)),url(images/background.png);
     background-repeat: no-repeat;
