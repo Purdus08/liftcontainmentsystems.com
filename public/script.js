@@ -19,31 +19,33 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   });
 });
 
-const menuIcon = document.querySelector('.bx-menu-alt-right');
-const navLinks = document.querySelector('.nav-links');
-const navItems = document.querySelectorAll('.nav-links ul li a');
+
+
+//const menuIcon = document.querySelector('.bx-menu-alt-right');
+//const navLinks = document.querySelector('.nav-links');
+//const navItems = document.querySelectorAll('.nav-links ul li a');
 
 // Toggle menu
-menuIcon.addEventListener('click', (e) => {
-  e.stopPropagation(); // ⬅ prevents instant close
-  navLinks.classList.toggle('active');
-});
+//menuIcon.addEventListener('click', (e) => {
+  //e.stopPropagation(); // ⬅ prevents instant close
+  //navLinks.classList.toggle('active');
+//});
 
 // Close menu when clicking a link
-navItems.forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('active');
-  });
-});
+//navItems.forEach(link => {
+  //link.addEventListener('click', () => {
+    //navLinks.classList.remove('active');
+  //});
+//});
 
-document.addEventListener('click', (e) => {
-  if (
-    !navLinks.contains(e.target) &&
-    !menuIcon.contains(e.target)
-  ) {
-    navLinks.classList.remove('active');
-  }
-});
+//document.addEventListener('click', (e) => {
+  //if (
+    //!navLinks.contains(e.target) &&
+    //!menuIcon.contains(e.target)
+  //) {
+    //navLinks.classList.remove('active');
+  //}
+//});
 
 // Desktop only: close on mouse leave
 //if (window.innerWidth > 768) {
@@ -114,3 +116,30 @@ if (toggleBtn && serviceCards) {
       isHidden ? "bx bx-chevron-down" : "bx bx-chevron-up";
   });
 }
+
+const floatingVideo = document.getElementById("floatingVideo");
+const floatVid = document.getElementById("floatVid");
+const closeVideo = document.getElementById("closeVideo");
+
+let videoShown = false;
+
+// Show video after scrolling
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 700 && !videoShown) {
+    floatingVideo.style.display = "block";
+    floatVid.muted = false; // 🔊 allow sound
+    floatVid.play().catch(() => {
+      // autoplay might fail until user interacts
+      floatVid.loop=true;
+      floatVid.muted = true;
+      floatVid.play();
+    });
+    videoShown = true;
+  }
+});
+
+// Close button
+closeVideo.addEventListener("click", () => {
+  floatingVideo.style.display = "none";
+  floatVid.pause();
+});
