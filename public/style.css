@@ -70,7 +70,7 @@ a{
 .hero{
     height: 200vh;
     width: 100%;
-    background: linear-gradient(rgba(24,46,96,1),rgba(24,46,95,.5)),url(images/IMG_7285.jpg);
+    background: linear-gradient(rgb(3, 49, 95),rgba(27, 61, 163, 0.5)),url(images/IMG_7285.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -86,12 +86,12 @@ a{
   list-style: none;
   padding: 2%;
   left: 0;
-  top: 205px;
+  top: 220px;
   z-index: 10;
 
   display: flex;              /* CLOSED */
   justify-content: center;
-  gap: 50px;
+  gap: 120px;
 }
 
 /*.nav-links.active ul {
@@ -160,22 +160,31 @@ nav ul li a{
         padding: 24px;
     }
 }
-
+/*
+.header{
+    color: #000000;
+    font-size: xx-large;
+    padding-top: 50%;
+}
+*/
 .hero-content{
-    width: 35%;
+    width: 65%;
     margin: 0 auto;
     position: relative;
     top: 25%;
     text-align: center;
+    padding-top: 25%;
 
-    h2{
+    h1{
         color: var(--accent);
+        font-weight: 500;
     }
 
     p{
         color: var(--white);
         font-weight: 400;
         line-height: 1.5;
+        font-size: x-large;
     }
 
     * + *{
@@ -329,7 +338,8 @@ nav ul li a{
     }
 
     h3,h4{
-        color: var(--white);
+        color:#fc881c;
+        padding-bottom: 3%;
     }
 
     .container{
@@ -583,22 +593,40 @@ nav ul li a{
         }
     }
 
-    .service-cards{
-        margin-top: 200px;
-        margin-bottom: 50px;
-        gap: 32px;
-    }
+
+
+    .service-cards {
+    display: flex;
+    gap: 32px;
+    margin-top: 200px;
+    margin-bottom: 50px;
+}
 
     .service .card p {
   color: #222;
+  font-size: medium;
+}
+
+.card ul {
+    padding-left: 20px;
+    text-align: left;
+}
+
+.card li {
+    margin-bottom: 10px;
+}
+
+.indent{
+    text-indent: 10%;
 }
 
     .card{
+        flex: 1;
         padding: 50px;
         text-align: center;
         background-color: var(--basic);
         border-radius: 16px;
-        box-shadow: rgba(149,157,165,.2,0,8,24);
+        box-shadow: 0 8px 24px rgba(149,157,165,.2);
     
         i{
             color: var(--accent);
