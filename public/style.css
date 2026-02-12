@@ -76,7 +76,7 @@ a{
     background-repeat: no-repeat;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    margin-bottom: 50px;
+    /*margin-bottom: 50px;*/
 }
 
 .nav-links ul {
@@ -88,10 +88,11 @@ a{
   left: 0;
   top: 220px;
   z-index: 10;
+  font-size: large;
 
   display: flex;              /* CLOSED */
   justify-content: center;
-  gap: 120px;
+  gap: 140px;
 }
 
 /*.nav-links.active ul {
@@ -113,7 +114,7 @@ img{
 .logo span{
     color: var(--black);
     font-size: 72px;
-    font-weight: 500;
+    font-weight: 385;
     margin: left 8px;
 }
 
@@ -185,6 +186,13 @@ nav ul li a{
         font-weight: 400;
         line-height: 1.5;
         font-size: x-large;
+    }
+
+    .tint{
+        color: var(--white);
+        font-weight: 400;
+        line-height: 1.5;
+        font-size: large;
     }
 
     * + *{
@@ -329,7 +337,7 @@ nav ul li a{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding: 100px;
-    margin: 50px 0;
+    /*margin: 50px 50px;*/
 
     h2 {
         color:#fc881c;
@@ -476,24 +484,23 @@ nav ul li a{
 /* service */
 
 .service {
-  position: relative;
-  min-height: 140vh;
+   position:relative;
+  width: 100%;
+  height: 240vh;
   overflow: hidden;
-  border-radius: 10px;
 }
 
 .service .bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
-
-  z-index: -1;        /* pushes it behind content */
-  pointer-events: none; /* prevents interaction */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -1; /* prevents interaction */
 }
+
 
 /* Keep your content above the video */
 .service-content {
@@ -658,7 +665,12 @@ nav ul li a{
 .cta-section {
     background: linear-gradient(135deg, #ff9800, #ff6a00);
     padding: 90px 20px;
-    margin-top: 100px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    /*margin-top: 100px;*/
   }
   
   .cta-inner {
@@ -806,6 +818,10 @@ nav ul li a{
   background: #fffc30;
   border-top: 1px solid #fffc30;
   border-bottom: 1px solid #fffc30;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
   padding: 30px 0;
 }
 
@@ -913,7 +929,7 @@ footer{
 #backToTop {
   position: fixed;
   bottom: 25px;
-  right: 25px;
+  left: 25px;
   width: 50px;
   height: 50px;
   background: #005a87; /* match your brand */
@@ -987,4 +1003,3 @@ body.scrolled .floating-video{
     scroll-behavior: smooth;
 
 }*/
-
