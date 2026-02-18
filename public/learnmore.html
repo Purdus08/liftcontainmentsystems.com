@@ -50,6 +50,7 @@ header {
 }
 header h1 { font-size: 32px; max-width: 900px; margin: auto; }
 
+
 /* Section cards */
 section { 
   max-width: 900px; 
@@ -133,6 +134,120 @@ section.disclaimer .container {
   border-radius: 10px;
 }
 
+/* SIDE MEDIA COLUMNS */
+.side-media {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 140px;
+  overflow-y: auto;     /* allow vertical scroll */
+  overflow-x: visible;
+  z-index: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.side-media.left {
+  left: 0;
+  padding-top: 0%;
+  padding-bottom: 0%;
+}
+
+.side-media.right {
+  right: 0;
+  padding-top: 0%;
+  padding-bottom: 0%;
+}
+
+.side-media .media-item {
+  margin: 18px 10px;
+  border-radius: 10px;
+  overflow: visible;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: transform 0.35s cubic-bezier(.2,.8,.2,1),
+              box-shadow 0.35s ease;
+  position: relative;
+}
+
+.side-media .media-item:hover {
+  transform: scale(1.35) translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+  z-index: 20;
+}
+
+.side-media img,
+.side-media video {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Push main content inward */
+body {
+  padding-left: 160px;
+  padding-right: 160px;
+}
+
+/* Home Button */
+.btn-home {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 22px;
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.btn-home:hover {
+  background: #ffffff;
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.floating-home {
+  position: fixed;
+  top: 20px;
+  left: 180px; /* accounts for your side media */
+  background: var(--primary);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  z-index: 50;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  transition: all 0.25s ease;
+}
+
+.floating-home:hover {
+  background: #584fd1;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1100px) {
+  .floating-home {
+    left: 20px;
+  }
+}
+
+
+
+/* Hide side media on tablets/mobile */
+@media (max-width: 1100px) {
+  .side-media {
+    display: none;
+  }
+  body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+
 /* Responsive */
 @media (max-width: 768px) {
   header h1 { font-size: 24px; }
@@ -144,8 +259,41 @@ section.disclaimer .container {
 </head>
 <body>
 
+<a href="index.html" class="floating-home">← Home</a>
+
+
+<div class="side-media left">
+
+  <!-- 8 Images -->
+  <div class="media-item"><img src="images/old.png" loading="lazy"></div>
+  <div class="media-item"><img src="images/old2.png" loading="lazy"></div>
+  <div class="media-item"><img src="images/old4.png" loading="lazy"></div>
+  <div class="media-item"><img src="images/old6.png" loading="lazy"></div>
+  <div class="media-item"><img src="images/old8.png" loading="lazy"></div>
+  <div class="media-item"><img src="images/old10.png" loading="lazy"></div>
+  
+  
+
+  <!-- 2 Videos 
+  <div class="media-item">
+    <video autoplay muted loop playsinline>
+      <source src="videos/" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="media-item">
+    <video autoplay muted loop playsinline>
+      <source src="videos/" type="video/mp4">
+    </video>
+  </div>
+-->
+</div>
+
+
 <header data-aos="fade-down">
-  <h1>Mobile Lift Containment System</h1>
+  <h1>Lift Containment System</h1>
+  <a href="index.html" class="btn-home">← Return to Home</a>
+
 </header>
 
 <section id="overview" data-aos="fade-up">
@@ -155,7 +303,7 @@ section.disclaimer .container {
 </section>
 
 <section id="problem" data-aos="fade-up">
-  <h2>Problems with Other Products</h2>
+  <h2>Problems with Previous Containment</h2>
   <h3>Innovation Gap</h3>
   <p>For decades, painters and welders have relied on the same labor-intensive methods to protect
     flooring, equipment, and materials. Before this invention, thousands of man-hours were spent 
@@ -180,7 +328,7 @@ section.disclaimer .container {
     requiring additional cleaning-often added to punch lists during project closeout.
   </p>
 </section>
-
+<!--
 <section id="competition" data-aos="fade-up">
   <h2>Our Competition</h2>
   <ul>
@@ -199,6 +347,7 @@ section.disclaimer .container {
     <li>Gather feedback and refine design</li>
   </ul>
 </section>
+-->
 <!--
 <section id="market-overview" data-aos="fade-up">
   <h2>Market Overview</h2>
@@ -234,7 +383,7 @@ section.disclaimer .container {
   <button class="btn-pdf" id="downloadPDF">Download PDF</button>
 </section>
 -->
-<section id="solution" data-aos="fade-up">
+<!--<section id="solution" data-aos="fade-up">
   <h2>Solution</h2>
   <p>Our product simplifies life with unique features not found elsewhere.</p>
   <ul>
@@ -249,7 +398,7 @@ section.disclaimer .container {
     </li>
   </ul>
 </section>
-
+-->
        <!-- DISCLAIMER -->
 <section class="disclaimer">
   <div class="container">
@@ -266,6 +415,8 @@ section.disclaimer .container {
 <footer>
   <p>© 2024 Professional Construction Services Unlimited, LLC. All Rights Reserved.</p>
 </footer>
+
+
 
 <script>
 AOS.init();
@@ -306,6 +457,40 @@ document.getElementById('downloadPDF').addEventListener('click', () => {
 });
 </script>
 </script>
+-->
+<div class="side-media right">
+
+  <!-- 7 More Images (Total Now = 15 Images) -->
+  <div class="media-item"><img src="images/old1.png" loading="lazy"></div>
+  <div class="media-item"><img src="images/old3.png" loading="lazy"></div>
+  <div class="media-item"><img src="images/old5.png" loading="lazy"></div>
+  <div class="media-item"><img src="images/old7.png" loading="lazy"></div>
+  <div class="media-item"><img src="images/old9.png" loading="lazy"></div>
+  
+  
+
+  <!-- 3 More Videos (Total Now = 5 Videos) -->
+  <div class="media-item">
+    <video autoplay muted loop playsinline>
+      <source src="videos/oldvid.mp4" type="video/mp4">
+    </video>
+  </div>
+<!--
+  <div class="media-item">
+    <video autoplay muted loop playsinline>
+      <source src="videos/" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="media-item">
+    <video autoplay muted loop playsinline>
+      <source src="videos/" type="video/mp4">
+    </video>
+  </div>
+-->
+</div>
+
+
 </body>
 
 </html>
