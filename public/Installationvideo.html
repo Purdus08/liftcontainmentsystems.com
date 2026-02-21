@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="icon" href="images/PCS Logo.png" type="image/png">
+<title>Ultimate Installation Guide</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    text-align: center;
+}
+
+header {
+    padding: 25px;
+    font-size: 26px;
+    font-weight: bold;
+    background: rgba(0,0,0,0.3);
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+.video-wrapper {
+    display: none;
+    margin-top: 20px;
+}
+
+video {
+    width: 100%;
+    border-radius: 10px;
+    background: black;
+}
+
+.controls {
+    margin-top: 15px;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.start-btn { background: #00ffcc; color: black; }
+.control-btn { background: white; color: #2a5298; }
+
+.progress-container {
+    width: 100%;
+    background: rgba(255,255,255,0.2);
+    height: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #00ffcc;
+}
+
+.time-display {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.volume-control {
+    margin-top: 10px;
+}
+
+input[type="range"] {
+    width: 150px;
+}
+
+@media(max-width:600px){
+    button { font-size: 12px; padding: 8px 14px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>Lift Containment System Installation Guide</header>
+
+<div class="container">
+
+<h2>Click Start to Begin Installation Video</h2>
+<button class="start-btn" onclick="startVideo()">Start Installation</button>
+
+<div class="video-wrapper" id="videoSection">
+
+    <video id="video">
+        <source src="images/PCS Setup video.mp4" type="video/mp4">
+        Your browser does not support video.
+    </video>
+
+    <div class="progress-container" id="progressContainer">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="time-display" id="timeDisplay">0:00 / 0:00</div>
+
+    <div class="controls">
+        <button class="control-btn" onclick="togglePlay()" id="playBtn">⏸ Pause</button>
+        <button class="control-btn" onclick="rewind()">⏪ 10s</button>
+        <button class="control-btn" onclick="forward()">⏩ 10s</button>
+        <button class="control-btn" onclick="toggleMute()" id="muteBtn">🔊 Mute</button>
+        <button class="control-btn" onclick="toggleFullscreen()">📺 Fullscreen</button>
+    </div>
+
+    <div class="volume-control">
+        🔊 Volume:
+        <input type="range" min="0" max="1" step="0.01" id="volumeSlider">
+    </div>
+
+</div>
+
+</div>
+
+<script>
+const video = document.getElementById("video");
+const progressBar = document.getElementById("progressBar");
+const progressContainer = document.getElementById("progressContainer");
+const playBtn = document.getElementById("playBtn");
+const muteBtn = document.getElementById("muteBtn");
+const timeDisplay = document.getElementById("timeDisplay");
+const volumeSlider = document.getElementById("volumeSlider");
+
+function startVideo() {
+    document.getElementById("videoSection").style.display = "block";
+    video.play();
+    video.scrollIntoView({ behavior: "smooth" });
+}
+
+function togglePlay() {
+    if (video.paused) {
+        video.play();
+        playBtn.textContent = "⏸ Pause";
+    } else {
+        video.pause();
+        playBtn.textContent = "▶ Play";
+    }
+}
+
+function rewind() {
+    video.currentTime -= 10;
+}
+
+function forward() {
+    video.currentTime += 10;
+}
+
+function toggleMute() {
+    video.muted = !video.muted;
+    muteBtn.textContent = video.muted ? "🔇 Unmute" : "🔊 Mute";
+}
+
+function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+        video.requestFullscreen();
+    } else {
+        document.exitFullscreen();
+    }
+}
+
+video.addEventListener("timeupdate", () => {
+    const percent = (video.currentTime / video.duration) * 100;
+    progressBar.style.width = percent + "%";
+    updateTime();
+});
+
+progressContainer.addEventListener("click", (e) => {
+    const width = progressContainer.clientWidth;
+    const clickX = e.offsetX;
+    const duration = video.duration;
+    video.currentTime = (clickX / width) * duration;
+});
+
+volumeSlider.addEventListener("input", () => {
+    video.volume = volumeSlider.value;
+});
+
+video.addEventListener("loadedmetadata", updateTime);
+video.addEventListener("ended", () => {
+    playBtn.textContent = "▶ Replay";
+});
+
+function updateTime() {
+    const current = formatTime(video.currentTime);
+    const total = formatTime(video.duration);
+    timeDisplay.textContent = current + " / " + total;
+}
+
+function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+}
+</script>
+
+</body>
+</html>
