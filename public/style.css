@@ -363,6 +363,16 @@ nav ul li a{
   margin-top: 10px;
 }
 
+.newsletter .media {
+  flex: 0 0 300px;
+}
+
+.media video{
+    width: 150%;
+  border-radius: 10px;
+
+}
+
 .newsletter{
     background-image: linear-gradient(rgba(24,46,96,1),rgba(24,46,96,.05)),url(images/background.png);
     background-repeat: no-repeat;
