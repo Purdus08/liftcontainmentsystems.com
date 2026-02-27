@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema Móvil de Contención para Elevadores</title>
+<link rel="icon" href="../images/PCS Logo.png" type="image/png">
+
+<!-- SEO Language Link Back to English -->
+<link rel="alternate" hreflang="en" href="https://www.liftcontainmentsystems.com/learnmore.html">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- jsPDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PRV85XK2VQ"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-PRV85XK2VQ');
+</script>
+
+<style>
+
+:root {
+  --primary: #635bff;         /* Accent */
+  --secondary: #ff7f50;
+  --bg: #170c36;              /* Softer page background */
+  --card-bg: #cecbcb;         /* Softer card background */
+  --gray: #4b4b4b;            /* Softer text gray */
+  --dark: #2c2c2c;            /* Heading dark gray */
+  --border: #d1d5db;          /* Softer border */
+  --white: #f8f7f7;
+}
+
+/* Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { 
+  font-family: 'Inter', sans-serif; 
+  background: var(--bg); 
+  color: var(--dark); 
+  line-height: 1.6; 
+}
+
+/* Header - softer gradient */
+header { 
+  background: linear-gradient(135deg, #2e2a7a, #060607); 
+  color: #fff; 
+  padding: 50px 20px; 
+  text-align: center; 
+}
+header h1 { font-size: 32px; max-width: 900px; margin: auto; }
+
+
+/* Section cards */
+section { 
+  max-width: 900px; 
+  margin: 50px auto; 
+  padding: 30px 20px; 
+  background: var(--card-bg); 
+  border-radius: 12px; 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+section:hover { 
+  transform: translateY(-4px); 
+  box-shadow: 0 15px 35px rgba(0,0,0,0.05); 
+}
+
+/* Headings */
+h2 { font-size: 24px; margin-bottom: 15px; color: var(--primary); }
+h3 { font-size: 18px; margin-bottom: 8px; color: var(--secondary); }
+
+/* Paragraphs and lists */
+p { margin-bottom: 15px; line-height: 1.7; }
+ul { margin-bottom: 15px; padding-left: 20px; }
+ul li { margin-bottom: 10px; position: relative; padding-left: 20px; }
+ul li::before { content: "✓"; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
+
+/* Tables */
+table { 
+  width: 100%; 
+  border-collapse: collapse; 
+  margin-top: 20px; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03); 
+}
+th, td { padding: 12px 16px; border-bottom: 1px solid var(--border); text-align: left; }
+thead { background: #f3f4f6; position: sticky; top: 0; z-index: 1; }
+tbody tr:nth-child(even) { background: #f9f9f9; }
+tbody tr:hover { background: #e6e6ff; transition: background 0.3s ease; }
+th { font-weight: 600; color: var(--gray); text-transform: uppercase; font-size: 14px; }
+td { font-size: 15px; }
+
+/* Canvas charts */
+canvas { 
+  margin-top: 30px; 
+  border-radius: 12px; 
+  background: #f9f9f9; 
+  padding: 20px; 
+  box-shadow: 0 10px 20px rgba(0,0,0,0.03); 
+}
+
+/* PDF Button */
+.btn-pdf {
+  display: inline-block;
+  padding: 12px 25px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-pdf:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  background: #584fd1; /* Slightly darker on hover */
+}
+
+/* Footer */
+footer { 
+  text-align: center; 
+  padding: 30px 20px; 
+  color: var(--white); 
+  font-size: 13px; 
+  margin-top: 50px; 
+}
+
+/* Disclaimer section */
+section.disclaimer .container {
+  background: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* SIDE MEDIA COLUMNS */
+.side-media {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 140px;
+  overflow-y: auto;     /* allow vertical scroll */
+  overflow-x: visible;
+  z-index: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.side-media.left {
+  left: 0;
+  padding-top: 0%;
+  padding-bottom: 0%;
+}
+
+.side-media.right {
+  right: 0;
+  padding-top: 0%;
+  padding-bottom: 0%;
+}
+
+.side-media .media-item {
+  margin: 18px 10px;
+  border-radius: 10px;
+  overflow: visible;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: transform 0.35s cubic-bezier(.2,.8,.2,1),
+              box-shadow 0.35s ease;
+  position: relative;
+}
+
+.side-media .media-item:hover {
+  transform: scale(1.35) translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+  z-index: 20;
+}
+
+.side-media img,
+.side-media video {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Push main content inward */
+body {
+  padding-left: 160px;
+  padding-right: 160px;
+}
+
+/* Home Button */
+.btn-home {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 22px;
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.btn-home:hover {
+  background: #ffffff;
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.floating-home {
+  position: fixed;
+  top: 20px;
+  left: 180px; /* accounts for your side media */
+  background: var(--primary);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  z-index: 50;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  transition: all 0.25s ease;
+}
+
+.floating-home:hover {
+  background: #584fd1;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1100px) {
+  .floating-home {
+    left: 20px;
+  }
+}
+
+
+
+/* Hide side media on tablets/mobile */
+@media (max-width: 1100px) {
+  .side-media {
+    display: none;
+  }
+  body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  header h1 { font-size: 24px; }
+  h2 { font-size: 20px; }
+  h3 { font-size: 16px; }
+}
+
+</style>
+</head>
+
+<body>
+
+<a href="index.html" class="floating-home">← Inicio</a>
+
+<div class="side-media left">
+  <div class="media-item"><img src="../images/old.png" loading="lazy"></div>
+  <div class="media-item"><img src="../images/old2.png" loading="lazy"></div>
+  <div class="media-item"><img src="../images/old4.png" loading="lazy"></div>
+  <div class="media-item"><img src="../images/old6.png" loading="lazy"></div>
+  <div class="media-item"><img src="../images/old8.png" loading="lazy"></div>
+  <div class="media-item"><img src="../images/old10.png" loading="lazy"></div>
+</div>
+
+<header data-aos="fade-down">
+  <h1>Sistema de Contención para Elevadores</h1>
+  <a href="index.html" class="btn-home">← Regresar al Inicio</a>
+</header>
+
+<section id="overview" data-aos="fade-up">
+  <h2>Descripción del Producto</h2>
+  <p>
+    El Sistema de Contención para Elevadores está diseñado para proteger pisos,
+    equipos y áreas circundantes durante trabajos de pintura, soldadura y construcción.
+    Elimina métodos tradicionales que consumen tiempo y reduce el riesgo de daños costosos.
+  </p>
+</section>
+
+<section id="problem" data-aos="fade-up">
+  <h2>Problemas con Métodos de Contención Anteriores</h2>
+
+  <h3>Falta de Innovación</h3>
+  <p>
+    Durante décadas, pintores y soldadores han utilizado métodos intensivos en mano de obra
+    para proteger superficies. Antes de esta invención, se invertían miles de horas cubriendo
+    y encintando todo debajo del área de trabajo, además de tiempo adicional retirando los materiales.
+  </p>
+
+  <h3>Equipos de Elevación</h3>
+  <p>
+    Pocos contratistas poseen sus propios elevadores, generalmente los alquilan a proveedores.
+    Estas compañías alquilan miles de unidades diariamente, con valores desde $35,000 hasta cifras
+    de seis dígitos. Los equipos deben devolverse en condiciones originales, y los trabajos de pintura
+    son una de las principales causas de daños.
+  </p>
+
+  <h3>Condiciones Climáticas</h3>
+  <p>
+    Ambientes fríos, húmedos o ventosos dificultan que la cinta se adhiera correctamente.
+    El plástico protector suele desprenderse y el exceso de pintura o chispas de soldadura
+    pueden desplazarse 10, 20 o incluso 50 pies debajo del área de trabajo.
+  </p>
+
+  <h3>Residuos de Cinta Adhesiva</h3>
+  <p>
+    En proyectos de larga duración, la cinta protectora puede permanecer más tiempo del previsto,
+    generando residuos en marcos, puertas y estructuras metálicas que requieren limpieza adicional
+    al cierre del proyecto.
+  </p>
+</section>
+
+<section class="disclaimer">
+  <div class="container">
+    <h4>Aviso Importante</h4>
+    <p>
+      <strong>Descargo de responsabilidad:</strong>
+      El Sistema de Contención para Elevadores <strong>no es un dispositivo de seguridad</strong>
+      y no sustituye el uso de equipo, procedimientos o capacitación adecuados.
+      El usuario es responsable de cumplir con todas las regulaciones de seguridad aplicables.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2024 Professional Construction Services Unlimited, LLC. Todos los derechos reservados.</p>
+</footer>
+
+<div class="side-media right">
+  <div class="media-item"><img src="../images/old1.png" loading="lazy"></div>
+  <div class="media-item"><img src="../images/old3.png" loading="lazy"></div>
+  <div class="media-item"><img src="../images/old5.png" loading="lazy"></div>
+  <div class="media-item"><img src="../images/old7.png" loading="lazy"></div>
+  <div class="media-item"><img src="../images/old9.png" loading="lazy"></div>
+  <div class="media-item">
+    <video autoplay muted loop playsinline>
+      <source src="../images/oldvid.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+<script>
+AOS.init();
+
+// Chart (Safe check so it doesn't break if section is hidden)
+const chartElement = document.getElementById('revenueChart');
+if (chartElement) {
+  const ctx = chartElement.getContext('2d');
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['20XX', '20XX', '20XX', '20XX'],
+      datasets: [
+        { label: 'Clientes', data: [10,20,30,40], borderColor: '#22c55e', fill: true },
+        { label: 'Órdenes', data: [100,200,300,400], borderColor: '#635bff', fill: true },
+        { label: 'Ingresos Brutos ($)', data: [10000,20000,30000,40000], borderColor: '#ff7f50', fill: true }
+      ]
+    },
+    options: { responsive: true }
+  });
+}
+
+// PDF Safe Check
+const pdfBtn = document.getElementById('downloadPDF');
+if (pdfBtn) {
+  pdfBtn.addEventListener('click', () => {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF('p', 'pt', 'a4');
+    html2canvas(document.querySelector('section#market-overview')).then(canvas => {
+      const imgData = canvas.toDataURL('image/png');
+      doc.addImage(imgData, 'PNG', 25, 20, 550, canvas.height * 550 / canvas.width);
+      doc.save('Finanzas_Sistema_Contencion.pdf');
+    });
+  });
+}
+</script>
+
+</body>
+</html>
