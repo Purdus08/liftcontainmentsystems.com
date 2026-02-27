@@ -1,11 +1,16 @@
 
-// Optional: smooth scroll with offset
-document.querySelectorAll('.nav-links a').forEach(link => {
+
+// Smooth scroll ONLY for internal anchor links
+document.querySelectorAll('.nav-links a[href^="#"]').forEach(link => {
   link.addEventListener('click', function(e) {
-    e.preventDefault(); // prevent default jump
+    e.preventDefault();
+
     const targetId = this.getAttribute('href').substring(1);
     const targetEl = document.getElementById(targetId);
-    const headerOffset = 80; // adjust to your nav height
+
+    if (!targetEl) return;
+
+    const headerOffset = 80;
     const elementPosition = targetEl.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -14,11 +19,9 @@ document.querySelectorAll('.nav-links a').forEach(link => {
       behavior: 'smooth'
     });
 
-    // Close menu after clicking
     document.querySelector('.nav-links').classList.remove('active');
   });
 });
-
 
 
 //const menuIcon = document.querySelector('.bx-menu-alt-right');
