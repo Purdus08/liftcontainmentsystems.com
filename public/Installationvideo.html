@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <link rel="icon" href="images/PCS Logo.png" type="image/png">
+<link rel="alternate" hreflang="es" href="https://https://www.liftcontainmentsystems.com/es/installationvideo.html">
 <title>Ultimate Installation Guide</title>
 
 <style>
@@ -107,10 +108,15 @@ input[type="range"] {
 
 <div class="video-wrapper" id="videoSection">
 
-    <video id="video">
-        <source src="images/PCS Setup video.mp4" type="video/mp4">
-        Your browser does not support video.
-    </video>
+    <div style="margin-bottom:15px;">
+    <button class="control-btn" onclick="setLanguage('es')">🇪🇸 Español</button>
+    <button class="control-btn" onclick="setLanguage('en')">🇺🇸 English</button>
+</div>
+
+<video id="video">
+    <source id="videoSource" src="images/PCS Setup video.mp4" type="video/mp4">
+Your browser does not support video.
+</video>
 
     <div class="progress-container" id="progressContainer">
         <div class="progress-bar" id="progressBar"></div>
@@ -143,6 +149,21 @@ const playBtn = document.getElementById("playBtn");
 const muteBtn = document.getElementById("muteBtn");
 const timeDisplay = document.getElementById("timeDisplay");
 const volumeSlider = document.getElementById("volumeSlider");
+
+function setLanguage(lang) {
+    const source = document.getElementById("videoSource");
+
+    if (lang === "es") {
+        source.src = "images/PCS Setup video Spanish.mp4";
+    } else {
+        source.src = "images/PCS Setup video.mp4";
+    }
+
+    video.pause();
+    video.load();
+    video.play();
+}
+
 
 function startVideo() {
     document.getElementById("videoSection").style.display = "block";
