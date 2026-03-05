@@ -35,17 +35,17 @@ gtag('config', 'G-PRV85XK2VQ');
 <style>
 
 :root {
-  --primary: #635bff;         /* Accent */
+  --primary: #635bff;         
   --secondary: #ff7f50;
-  --bg: #170c36;              /* Softer page background */
-  --card-bg: #cecbcb;         /* Softer card background */
-  --gray: #4b4b4b;            /* Softer text gray */
-  --dark: #2c2c2c;            /* Heading dark gray */
-  --border: #d1d5db;          /* Softer border */
+  --bg: #170c36;              
+  --card-bg: #cecbcb;         
+  --gray: #4b4b4b;            
+  --dark: #2c2c2c;            
+  --border: #d1d5db;          
   --white: #f8f7f7;
 }
 
-/* Reset */
+/* reset */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { 
   font-family: 'Inter', sans-serif; 
@@ -54,7 +54,7 @@ body {
   line-height: 1.6; 
 }
 
-/* Header - softer gradient */
+/* header */
 header { 
   background: linear-gradient(135deg, #2e2a7a, #060607); 
   color: #fff; 
@@ -64,7 +64,7 @@ header {
 header h1 { font-size: 32px; max-width: 900px; margin: auto; }
 
 
-/* Section cards */
+/* section cards */
 section { 
   max-width: 900px; 
   margin: 50px auto; 
@@ -79,17 +79,17 @@ section:hover {
   box-shadow: 0 15px 35px rgba(0,0,0,0.05); 
 }
 
-/* Headings */
+/* headings */
 h2 { font-size: 24px; margin-bottom: 15px; color: var(--primary); }
 h3 { font-size: 18px; margin-bottom: 8px; color: var(--secondary); }
 
-/* Paragraphs and lists */
+/* paragraphs and lists */
 p { margin-bottom: 15px; line-height: 1.7; }
 ul { margin-bottom: 15px; padding-left: 20px; }
 ul li { margin-bottom: 10px; position: relative; padding-left: 20px; }
 ul li::before { content: "✓"; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
 
-/* Tables */
+/* tables */
 table { 
   width: 100%; 
   border-collapse: collapse; 
@@ -103,7 +103,7 @@ tbody tr:hover { background: #e6e6ff; transition: background 0.3s ease; }
 th { font-weight: 600; color: var(--gray); text-transform: uppercase; font-size: 14px; }
 td { font-size: 15px; }
 
-/* Canvas charts */
+/* canvas charts */
 canvas { 
   margin-top: 30px; 
   border-radius: 12px; 
@@ -112,7 +112,7 @@ canvas {
   box-shadow: 0 10px 20px rgba(0,0,0,0.03); 
 }
 
-/* PDF Button */
+/* pdf button */
 .btn-pdf {
   display: inline-block;
   padding: 12px 25px;
@@ -131,7 +131,7 @@ canvas {
   background: #584fd1; /* Slightly darker on hover */
 }
 
-/* Footer */
+/* footer */
 footer { 
   text-align: center; 
   padding: 30px 20px; 
@@ -140,20 +140,20 @@ footer {
   margin-top: 50px; 
 }
 
-/* Disclaimer section */
+/* disclaimer section */
 section.disclaimer .container {
   background: #f2f2f2;
   padding: 20px;
   border-radius: 10px;
 }
 
-/* SIDE MEDIA COLUMNS */
+/* side media columns */
 .side-media {
   position: fixed;
   top: 0;
   bottom: 0;
   width: 140px;
-  overflow-y: auto;     /* allow vertical scroll */
+  overflow-y: auto;     
   overflow-x: visible;
   z-index: 0;
   padding-top: 20px;
@@ -195,13 +195,13 @@ section.disclaimer .container {
   border-radius: 10px;
 }
 
-/* Push main content inward */
+/* main content inward */
 body {
   padding-left: 160px;
   padding-right: 160px;
 }
 
-/* Home Button */
+/* home button */
 .btn-home {
   display: inline-block;
   margin-top: 20px;
@@ -224,7 +224,7 @@ body {
 .floating-home {
   position: fixed;
   top: 20px;
-  left: 180px; /* accounts for your side media */
+  left: 180px; 
   background: var(--primary);
   color: #fff;
   padding: 10px 18px;
@@ -249,7 +249,7 @@ body {
 
 
 
-/* Hide side media on tablets/mobile */
+/* hide side media */
 @media (max-width: 1100px) {
   .side-media {
     display: none;
@@ -261,7 +261,7 @@ body {
 }
 
 
-/* Responsive */
+
 @media (max-width: 768px) {
   header h1 { font-size: 24px; }
   h2 { font-size: 20px; }
@@ -363,7 +363,7 @@ body {
 <script>
 AOS.init();
 
-// Chart (Safe check so it doesn't break if section is hidden)
+// chart
 const chartElement = document.getElementById('revenueChart');
 if (chartElement) {
   const ctx = chartElement.getContext('2d');
@@ -381,7 +381,7 @@ if (chartElement) {
   });
 }
 
-// PDF Safe Check
+// pdf safe check
 const pdfBtn = document.getElementById('downloadPDF');
 if (pdfBtn) {
   pdfBtn.addEventListener('click', () => {
