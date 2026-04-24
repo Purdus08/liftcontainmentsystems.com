@@ -1071,16 +1071,102 @@ body.scrolled .floating-video{
     width: 260px;
     bottom: 80px;
   }
-}
-/* ========================= */
+}/* ========================= */
 /* MOBILE FIXES (SAFE LAYER) */
 /* ========================= */
 
+@media (max-width: 768px){
+
+  /* Prevent sideways scrolling */
+  body{
+    overflow-x: hidden;
+  }
+
+  /* NAV FIX */
+  .nav-links ul {
+    position: static;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    font-size: 14px;
+  }
+
+  /* HERO FIX */
+  .hero{
+    height: auto;
+    min-height: 100vh;
+    padding: 40px 0;
+  }
+
+  .hero-content{
+    width: 90%;
+    padding-top: 40px;
+  }
+
+  h1{
+    font-size: 28px;
+  }
+
+  /* LOGO FIX */
+  .logo span{
+    font-size: 24px;
+  }
+
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* SERVICE SECTION */
+  .service{
+    height: auto;
+    min-height: auto;
+  }
+
+  .service-cards{
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 16px;
+  }
+
+  .card{
+    padding: 20px;
+  }
+
+  /* NEWSLETTER */
+  .newsletter .container{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .newsletter .left-content{
+    padding-left: 0;
+    min-width: auto;
+  }
+
+  .media video{
+    width: 100%;
+  }
+
+  /* CTA BUTTON */
+  .cta-btn{
+    width: 100%;
+    justify-content: center;
+    font-size: 16px;
+  }
+
+  /* FLOATING VIDEO OFF (optional but recommended) */
+  .floating-video{
+    display: none;
+  }
+
+}
 /*html {
   scroll-behavior: smooth;
   scroll-padding-top: 120px;
 }
 */
+
 
 
 
