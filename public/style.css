@@ -1249,14 +1249,19 @@ body.scrolled .floating-video{
   }
 
   .notice-row {
-    flex-direction: row;     /* KEEP INLINE */
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: center;
     gap: 10px;
   }
 
   .notice-line {
-    flex: 1;
-    max-width: 60px;         /* shrink the lines */
+    display: block;
     height: 1px;
+    background: #bd7422;
+    flex: 1;
+    max-width: 80px;
   }
 
   .notice-text {
@@ -1270,6 +1275,7 @@ body.scrolled .floating-video{
     padding: 0 10px;
   }
 }
+
 /*html {
   scroll-behavior: smooth;
   scroll-padding-top: 120px;
