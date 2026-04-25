@@ -1202,6 +1202,46 @@ body.scrolled .floating-video{
     font-size: 18px;
   }
 }
+
+@media (max-width: 768px) {
+
+  nav.container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* NAV UNDER LOGO — BUT IN A ROW */
+  .nav-links ul {
+    position: static;
+    display: flex;
+    flex-direction: row;     /* <-- THIS is the key fix */
+    flex-wrap: wrap;        /* allows wrapping if screen is small */
+    justify-content: center;
+    align-items: center;
+    gap: 12px;              /* smaller spacing so it fits */
+    padding: 10px 0;
+    width: 100%;
+  }
+
+  .nav-links ul li a {
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+
+  .logo {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .logo img {
+    width: 120px;
+  }
+
+  .label span {
+    font-size: 18px;
+  }
+}
 /*html {
   scroll-behavior: smooth;
   scroll-padding-top: 120px;
