@@ -1276,6 +1276,28 @@ body.scrolled .floating-video{
   }
 }
 
+@media (max-width: 768px) {
+
+  .floating-video {
+    display: block;          /* ensure it shows */
+    width: 180px;            /* smaller size */
+    right: 10px;
+    bottom: 80px;
+    top: auto;               /* override desktop top positioning */
+    border-radius: 10px;
+  }
+
+  .floating-video video {
+    width: 100%;
+    height: auto;
+  }
+
+  .close-video {
+    width: 22px;
+    height: 22px;
+    font-size: 16px;
+  }
+}
 /*html {
   scroll-behavior: smooth;
   scroll-padding-top: 120px;
