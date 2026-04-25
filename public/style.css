@@ -1161,6 +1161,47 @@ body.scrolled .floating-video{
   }
 
 }
+
+@media (max-width: 768px) {
+
+  /* STACK LOGO + NAV VERTICALLY */
+  nav.container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* NAV LIST UNDER LOGO */
+  .nav-links ul {
+    position: static;      /* removes absolute positioning */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;             /* smaller spacing */
+    padding: 10px 0;
+    width: 100%;
+  }
+
+  /* MAKE LINKS EASIER TO TAP */
+  .nav-links ul li a {
+    font-size: 14px;
+    padding: 6px 0;
+  }
+
+  /* LOGO CENTERING FIX */
+  .logo {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .logo img {
+    width: 120px; /* optional: shrink logo for mobile */
+  }
+
+  .label span {
+    font-size: 18px;
+  }
+}
 /*html {
   scroll-behavior: smooth;
   scroll-padding-top: 120px;
