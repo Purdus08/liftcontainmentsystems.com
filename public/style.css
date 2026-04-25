@@ -1248,29 +1248,28 @@ body.scrolled .floating-video{
     padding: 0 16px;
   }
 
-  /* STACK NOTICE ROW NICELY */
   .notice-row {
-    flex-direction: column;
-    gap: 6px;
+    flex-direction: row;     /* KEEP INLINE */
+    gap: 10px;
   }
 
   .notice-line {
-    width: 80%;
-    max-width: 200px;
+    flex: 1;
+    max-width: 60px;         /* shrink the lines */
+    height: 1px;
   }
 
   .notice-text {
-    font-size: 0.95rem;
-    text-align: center;
+    font-size: 0.9rem;
+    white-space: nowrap;
   }
 
   .disclaimer-text {
     font-size: 0.85rem;
     line-height: 1.4;
-    padding: 0 8px;
+    padding: 0 10px;
   }
 }
-
 /*html {
   scroll-behavior: smooth;
   scroll-padding-top: 120px;
