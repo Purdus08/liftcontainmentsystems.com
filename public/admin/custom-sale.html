@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<title>Create Custom Sale | LCS Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="admin.css">
+
+</head>
+
+
+<body>
+
+
+<div class="admin-container">
+
+
+<h1>
+Create Custom Sale
+</h1>
+
+
+<p>
+Generate a Stripe checkout page for a custom customer order.
+</p>
+
+
+
+<label>
+Customer Name
+</label>
+
+<input id="customer"
+type="text"
+placeholder="Customer or Company Name">
+
+
+
+<label>
+Customer Email
+</label>
+
+<input id="email"
+type="email"
+placeholder="customer@email.com">
+
+
+
+<h2>
+Line Items
+</h2>
+
+
+<div id="items">
+
+
+<div class="item">
+
+
+<input class="item-name"
+placeholder="Description"
+value="">
+
+
+<input class="item-qty"
+type="number"
+value="1"
+min="1">
+
+
+<input class="item-price"
+type="number"
+placeholder="Price"
+step="0.01">
+
+
+</div>
+
+
+</div>
+
+
+
+<button onclick="addItem()">
++ Add Line Item
+</button>
+
+
+
+<h2>
+Total:
+$<span id="total">0.00</span>
+</h2>
+
+
+
+<button onclick="createSale()">
+Generate Stripe Checkout
+</button>
+
+
+
+<div id="result"></div>
+
+
+
+</div>
+
+
+<script src="admin-sale.js"></script>
+
+
+</body>
+
+</html>
