@@ -1,8 +1,5 @@
-# Allow Netlify Functions FIRST
-/.netlify/functions/*  /.netlify/functions/:splat  200
-
-# Allow admin pages
-/admin/*  /admin/:splat  200
+# Admin pages
+/admin/* /admin/:splat 200
 
 # Prerender everything else
-/*  https://service.prerender.io/https://www.liftcontainmentsystems.com/:splat  200
+/* https://service.prerender.io/https://www.liftcontainmentsystems.com/:splat 200
