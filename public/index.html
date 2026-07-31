@@ -384,5 +384,23 @@ gtag('event', 'qr_scan_installation_page', {
 <script src="script.js"></script>
 
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+if (window.netlifyIdentity) {
+
+  netlifyIdentity.on("init", user => {
+
+    if (!user) {
+      netlifyIdentity.open();
+    }
+
+  });
+
+  netlifyIdentity.on("login", user => {
+    window.location.href="/admin/";
+  });
+
+}
+</script>
+  
 </body>
 </html>
