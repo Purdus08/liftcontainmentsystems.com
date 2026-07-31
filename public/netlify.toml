@@ -1,0 +1,7 @@
+[[redirects]]
+
+from="/admin-sale.html"
+
+to="/login"
+
+status=401
