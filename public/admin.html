@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PCS Unlimited | Admin Sales Portal</title>
+
+<link rel="icon" href="images/PCS Logo.png">
+
+<style>
+
+:root{
+    --primary:#0b5ed7;
+    --secondary:#084298;
+    --success:#15a8b3;
+    --dark:#0f172a;
+    --light:#f8fafc;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+
+    background:linear-gradient(180deg,#05336e,#062646);
+    min-height:100vh;
+    padding:40px;
+}
+
+.container{
+
+    max-width:1200px;
+    margin:auto;
+    background:white;
+    border-radius:18px;
+    padding:40px;
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+
+}
+
+header{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:35px;
+
+}
+
+header h1{
+
+font-size:2rem;
+color:#05336e;
+
+}
+
+.badge{
+
+background:#15a8b3;
+color:white;
+padding:8px 18px;
+border-radius:999px;
+font-size:.8rem;
+
+}
+
+section{
+
+margin-bottom:35px;
+
+}
+
+h2{
+
+margin-bottom:15px;
+color:#05336e;
+
+}
+
+.grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+
+}
+
+input,
+textarea,
+select{
+
+width:100%;
+padding:12px;
+border-radius:8px;
+border:1px solid #ddd;
+font-size:15px;
+
+}
+
+textarea{
+
+resize:vertical;
+
+}
+
+.line-items{
+
+margin-top:20px;
+
+}
+
+.item{
+
+display:grid;
+grid-template-columns:4fr 1fr 2fr 120px;
+gap:15px;
+margin-bottom:15px;
+
+}
+
+button{
+
+cursor:pointer;
+border:none;
+padding:12px 18px;
+border-radius:8px;
+font-weight:bold;
+
+}
+
+.add{
+
+background:#15a8b3;
+color:white;
+
+}
+
+.remove{
+
+background:#ef4444;
+color:white;
+
+}
+
+.primary{
+
+background:#0b5ed7;
+color:white;
+width:100%;
+font-size:18px;
+padding:16px;
+
+}
+
+.summary{
+
+background:#f8fafc;
+padding:25px;
+border-radius:12px;
+
+}
+
+.summary-row{
+
+display:flex;
+justify-content:space-between;
+margin:10px 0;
+font-size:18px;
+
+}
+
+.total{
+
+font-size:24px;
+font-weight:bold;
+color:#05336e;
+
+}
+
+.checkout{
+
+margin-top:25px;
+
+}
+
+.checkout input{
+
+background:#f1f5f9;
+
+}
+
+.copy{
+
+margin-top:15px;
+background:#15a8b3;
+color:white;
+width:100%;
+
+}
+
+@media(max-width:900px){
+
+.item{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+
+<div>
+
+<h1>PCS Unlimited Admin Portal</h1>
+
+<p>Create custom Stripe invoices in seconds.</p>
+
+</div>
+
+<div class="badge">
+
+ADMIN
+
+</div>
+
+</header>
+
+<section>
+
+<h2>Customer Information</h2>
+
+<div class="grid">
+
+<div>
+
+<label>Customer Name</label>
+
+<input id="customerName">
+
+</div>
+
+<div>
+
+<label>Company</label>
+
+<input id="company">
+
+</div>
+
+<div>
+
+<label>Email</label>
+
+<input id="email" type="email">
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Invoice Items</h2>
+
+<div id="items" class="line-items">
+
+<div class="item">
+
+<input placeholder="Description">
+
+<input type="number" value="1" min="1">
+
+<input class="price" type="number" placeholder="Unit Price">
+
+<button class="remove">Remove</button>
+
+</div>
+
+</div>
+
+<button class="add" onclick="addItem()">
+
++ Add Another Item
+
+</button>
+
+</section>
+
+<section>
+
+<h2>Additional Charges</h2>
+
+<div class="grid">
+
+<div>
+
+<label>Shipping</label>
+
+<input id="shipping" type="number" value="0">
+
+</div>
+
+<div>
+
+<label>Tax %</label>
+
+<input id="tax" type="number" value="0">
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Notes</h2>
+
+<textarea rows="4"></textarea>
+
+</section>
+
+<section class="summary">
+
+<div class="summary-row">
+
+<span>Subtotal</span>
+
+<span id="subtotal">$0.00</span>
+
+</div>
+
+<div class="summary-row">
+
+<span>Tax</span>
+
+<span id="taxAmount">$0.00</span>
+
+</div>
+
+<div class="summary-row">
+
+<span>Shipping</span>
+
+<span id="shippingAmount">$0.00</span>
+
+</div>
+
+<hr style="margin:15px 0;">
+
+<div class="summary-row total">
+
+<span>Total</span>
+
+<span id="grandTotal">$0.00</span>
+
+</div>
+
+</section>
+
+<button class="primary">
+
+Generate Stripe Checkout
+
+</button>
+
+<div class="checkout">
+
+<label>Checkout URL</label>
+
+<input id="checkoutLink" readonly placeholder="Generated after checkout creation">
+
+<button class="copy">
+
+Copy Link
+
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function addItem(){
+
+const row=document.createElement("div");
+
+row.className="item";
+
+row.innerHTML=`
+
+<input placeholder="Description">
+
+<input type="number" value="1" min="1">
+
+<input class="price" type="number" placeholder="Unit Price">
+
+<button class="remove">Remove</button>
+
+`;
+
+document.getElementById("items").appendChild(row);
+
+attachEvents();
+
+}
+
+function attachEvents(){
+
+document.querySelectorAll(".remove").forEach(btn=>{
+
+btn.onclick=()=>{
+
+btn.parentElement.remove();
+
+calculate();
+
+};
+
+});
+
+document.querySelectorAll("input").forEach(i=>{
+
+i.oninput=calculate;
+
+});
+
+}
+
+function calculate(){
+
+let subtotal=0;
+
+document.querySelectorAll(".item").forEach(row=>{
+
+const qty=row.children[1].value||0;
+
+const price=row.children[2].value||0;
+
+subtotal+=qty*price;
+
+});
+
+const shipping=parseFloat(document.getElementById("shipping").value)||0;
+
+const taxRate=parseFloat(document.getElementById("tax").value)||0;
+
+const tax=subtotal*(taxRate/100);
+
+const total=subtotal+tax+shipping;
+
+document.getElementById("subtotal").innerText="$"+subtotal.toFixed(2);
+
+document.getElementById("taxAmount").innerText="$"+tax.toFixed(2);
+
+document.getElementById("shippingAmount").innerText="$"+shipping.toFixed(2);
+
+document.getElementById("grandTotal").innerText="$"+total.toFixed(2);
+
+}
+
+attachEvents();
+
+calculate();
+
+document.querySelector(".copy").onclick=function(){
+
+navigator.clipboard.writeText(document.getElementById("checkoutLink").value);
+
+alert("Checkout link copied.");
+
+}
+
+</script>
+
+</body>
+</html>
+
