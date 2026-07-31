@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>LCS Admin Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="admin.css">
+
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+</head>
+
+<body>
+
+
+<div class="admin-container">
+
+    <h1>
+        Lift Containment Systems
+    </h1>
+
+    <p class="subtitle">
+        Administrative Portal
+    </p>
+
+
+    <div id="login-box">
+
+        <button id="login">
+            Admin Login
+        </button>
+
+    </div>
+
+
+    <div id="dashboard" style="display:none;">
+
+
+        <h2>
+            Welcome Administrator
+        </h2>
+
+
+        <div class="cards">
+
+
+            <div class="card">
+                <h3>
+                    Create Custom Sale
+                </h3>
+
+                <p>
+                    Generate Stripe checkout links
+                    for custom orders.
+                </p>
+
+                <button>
+                    Open
+                </button>
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>
+                    Orders
+                </h3>
+
+                <p>
+                    View customer purchases.
+                </p>
+
+                <button>
+                    Open
+                </button>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>
+                    Customers
+                </h3>
+
+                <p>
+                    Customer history.
+                </p>
+
+                <button>
+                    Open
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+        <button id="logout">
+            Logout
+        </button>
+
+
+    </div>
+
+
+</div>
+
+
+<script src="admin.js"></script>
+
+</body>
+
+</html>
