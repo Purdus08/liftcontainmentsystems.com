@@ -1,1 +1,8 @@
+# Allow admin pages to load normally
+/admin/* /admin/:splat 200
+
+# Allow Netlify functions
+/.netlify/functions/* /.netlify/functions/:splat 200
+
+# Prerender SEO proxy
 * https://service.prerender.io/https://www.liftcontainmentsystems.com/:splat 200
