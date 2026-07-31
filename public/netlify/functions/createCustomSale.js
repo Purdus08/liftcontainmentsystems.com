@@ -5,99 +5,133 @@ const stripe = require("stripe")(
 
 exports.handler = async function(event) {
 
-  if (event.httpMethod !== "POST") {
 
-    return {
-      statusCode:405,
-      body:"Method Not Allowed"
-    };
-
-  }
+try {
 
 
-  try {
-
-    const data = JSON.parse(event.body);
-
-
-    const session =
-      await stripe.checkout.sessions.create({
-
-        mode:"payment",
-
-        customer_email:data.email,
-
-
-        line_items:
-        data.items.map(item => ({
-
-          price_data:{
-
-            currency:"usd",
-
-            product_data:{
-              name:item.name
-            },
-
-            unit_amount:
-            Math.round(item.price * 100)
-
-          },
-
-          quantity:item.quantity
-
-        })),
-
-
-        success_url:
-        "https://liftcontainmentsystems.com/success.html",
-
-
-        cancel_url:
-        "https://liftcontainmentsystems.com/productpage.html",
-
-
-        metadata:{
-
-          customer:data.customer,
-
-          type:"custom_sale"
-
-        }
-
-      });
+const body =
+JSON.parse(event.body);
 
 
 
-    return {
-
-      statusCode:200,
-
-      body:JSON.stringify({
-
-        url:session.url
-
-      })
-
-    };
+const items =
+body.items.map(item => ({
 
 
-  }
+price_data: {
 
-  catch(error){
 
-    return {
+currency: "usd",
 
-      statusCode:500,
 
-      body:JSON.stringify({
+product_data: {
 
-        error:error.message
+name: item.name
 
-      })
+},
 
-    };
 
-  }
+unit_amount:
+Math.round(item.price * 100)
+
+
+},
+
+
+quantity:
+item.quantity
+
+
+}));
+
+
+
+
+
+const session =
+await stripe.checkout.sessions.create({
+
+
+payment_method_types:[
+"card"
+],
+
+
+mode:"payment",
+
+
+
+customer_email:
+body.email,
+
+
+
+line_items:
+items,
+
+
+
+success_url:
+"https://www.liftcontainmentsystems.com/success.html",
+
+
+cancel_url:
+"https://www.liftcontainmentsystems.com/productpage.html"
+
+
+
+});
+
+
+
+return {
+
+
+statusCode:200,
+
+
+body:
+JSON.stringify({
+
+url:
+session.url
+
+})
+
+
+};
+
+
+
+}
+
+
+catch(error){
+
+
+console.error(error);
+
+
+
+return {
+
+
+statusCode:500,
+
+
+body:
+JSON.stringify({
+
+error:error.message
+
+})
+
+
+};
+
+
+
+}
+
 
 };
