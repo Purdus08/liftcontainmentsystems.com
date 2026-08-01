@@ -1,5 +1,8 @@
-# Admin pages
+# Admin
 /admin/* /admin/:splat 200
 
-# Prerender everything else
+# Functions must pass through
+/.netlify/functions/* /.netlify/functions/:splat 200
+
+# Everything else to prerender
 /* https://service.prerender.io/https://www.liftcontainmentsystems.com/:splat 200
