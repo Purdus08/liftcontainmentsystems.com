@@ -1,8 +1,5 @@
-# Admin
+/.netlify/functions/createCustomSale  /.netlify/functions/createCustomSale  200
+
 /admin/* /admin/:splat 200
 
-# Functions must pass through
-/.netlify/functions/* /.netlify/functions/:splat 200
-
-# Everything else to prerender
 /* https://service.prerender.io/https://www.liftcontainmentsystems.com/:splat 200
